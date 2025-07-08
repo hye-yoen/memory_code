@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            text-align: center;
+            min-width: 45px;
+            height: 45px;
+            border: 1px solid;
+        }
+    </style>   
+</head>
+
+
+    <!--기본  -->
+    <table border = "1" width = "480px" align="center">
+    <caption>기본 테이블 </caption>
+        <tr>
+            <th>열제목1</th>
+            <th>열제목2</th>
+            <th>열제목3</th>
+        </tr>
+        <tr>
+            <td>value1</td>
+            <td>value2</td>
+            <td>vlaue3</td>
+        </tr>
+        <tr>
+            <td>value1</td>
+            <td>value2</td>
+            <td>vlaue3</td>
+        </tr>
+    </table>
+    <hr />
+    
+    
+    <!-- rawspan (병합) -->
+    <!-- 시작위치 병합 -->
+    <!-- rawspan -> 밀려난거 주석처리 -->
+    <!-- 병합처리 할때 하나이상 원래 형태 보존 -->
+    <caption>rowspan</caption>
+    <table>
+        <tr>
+            <td rowspan="2">1</td>
+            <td>2</td>
+            <td>3</td>
+            <td rowspan="4">4</td>
+        </tr>
+        <tr>
+            <!-- <td>5</td> -->
+            <td>6</td>
+            <td rowspan="3">7</td>
+            <!-- <td>8</td> -->
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>10</td>
+            <!-- <td>11</td> -->
+            <!-- <td>12</td> -->
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>14</td>
+            <!-- <td>15</td> -->
+            <!-- <td>16</td> -->
+        </tr>
+    </table>
+    <hr />
+
+    <!-- rowspan이랑 동일 -->
+    <caption>colspan</caption>
+    <table>
+        <tr>
+            <td colspan="2">1</td>
+            <td>2</td>
+            <td>3</td>
+            <!-- <td>4</td> -->
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td colspan="4">9</td>
+            <!-- <td>10</td>
+            <td>11</td>
+            <td>12</td> -->
+        </tr>
+        <tr>
+            <td>13</td>
+            <td colspan="3">14</td>
+            <!-- <td>15</td>
+            <td>16</td> -->
+        </tr>
+    </table>
+    <hr />
+    
+    <!-- problem (tr(열) 10, td(행) 6) -->
+    <table border = "2" width = 480px>
+    <caption>problem</caption>
+        <tr>
+            <td colspan="6">한국의 차</td>
+            <!-- <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td> -->
+        </tr>
+        <tr>
+            <td rowspan="6">뿌리차</td>
+            <td>1</td>
+            <td rowspan="9">과일차</td>
+            <td>1</td>
+            <td rowspan="5">잎차</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <!-- <td>1</td> -->
+            <td>2</td>
+            <!-- <td>1</td> -->
+            <td>2</td>
+            <!-- <td>1</td> -->
+            <td>2</td>
+        </tr>
+        <tr>
+            <!-- <td>1</td> -->
+            <td>3</td>
+            <!-- <td>1</td> -->
+            <td>3</td>
+            <!-- <td>1</td> -->
+            <td>3</td>
+        </tr>
+        <tr>
+            <!-- <td>1</td> -->
+            <td>4</td>
+            <!-- <td>1</td> -->
+            <td>4</td>
+            <!-- <td>1</td> -->
+            <td>4</td>
+        </tr>
+        <tr>
+            <!-- <td>1</td> -->
+            <td>5</td>
+            <!-- <td>1</td> -->
+            <td>5</td>
+            <!-- <td>1</td> -->
+            <td>5</td>
+        </tr>
+        <tr>
+            <!-- <td>1</td> -->
+            <td>6</td>
+            <!--6<td>1</td> -->
+            <td>6</td>
+            <td rowspan="4">기타</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td rowspan="3">곡물차</td>
+            <td>1</td>
+            <!-- <td>1</td> -->
+            <td>7</td>
+            <!-- <td>1</td> -->
+            <td>2</td>
+        </tr>
+        <tr>
+            <!-- <td>1</td> -->
+            <td>2</td>
+            <!-- <td>1</td> -->
+            <td>8</td>
+            <!-- <td>1</td> -->
+            <td>3</td>
+        </tr>
+        <tr>
+            <!-- <td>1</td> -->
+            <td>3</td>
+            <!-- <td>1</td> -->
+            <td>9</td>
+            <!-- <td>1</td> -->
+            <td>4</td>
+        </tr>
+    </table>
+    <hr />
+
+    <table width = "500px">
+    <caption>주요 SNS서비스 별 이용율</caption>
+    <tr>
+        <td></td>
+        <td>페이스북</td>
+        <td>카카오스토리</td>
+        <td>밴드</td>
+        <td>인스타그램</td>
+        <td>트위터</td>
+    </tr>
+    <tr>
+        <td>2015년</td>
+        <td>77.1</td>
+        <td>58.3</td>
+        <td>32.4</td>
+        <td>16.7</td>
+        <td>22.1</td>
+    </tr>
+    <tr>
+        <td>2016년</td>
+        <td>73.8</td>
+        <td>51.0</td>
+        <td>41.0</td>
+        <td>28.1</td>
+        <td>14.7</td>
+    </tr>
+    </table>
+
+
+
+
+
+</body>
+</html>

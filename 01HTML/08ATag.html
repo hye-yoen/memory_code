@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{height: 3000px;} 
+        .btn{
+            display : block;
+            width : 120px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: none;
+            margin : 5px;
+            border-radius: 10px;
+            background-color: lightgray;
+            font-size: Brem;
+            color : white;
+            box-shadow: 3px 3px 3px lightgrey;
+            opacity: .5;
+            transition: 1s;
+        }
+        .btn:hover{
+            opacity: 1;
+        }
+        .btn-1{background-color:  orange;}
+        .btn-2{background-color: royalblue;}
+        .btn-3{background-color: brown;}
+    </style>
+</head>
+<body>
+    <!-- 현재 탭 이동 -->
+    <a class = "btn"href="./02basic.html">문서이동</a>
+    <a class = "btn btn-1"href="./03list.html" target=".self">문서이동1</a>
+    <a class = "btn btn-2"href="https://naver.com">naver</a>
+    <!-- 새탭 -->
+    <a class = "btn btn-3"href="./03list.html" target="_black">문서이동2</a>
+    <hr />
+
+    <!-- 내부에서 또다른 경로 -->
+    <a href="https://www.daum.net/" target="frm1">다음으로 이동</a>
+    <iframe src="" frameborder="1" width="400px" height="400px" name = "frm1"></iframe>
+    <hr />
+
+    <a href="javascript:void(0)">기능1</a> 
+    <a href="javascript:void(0)">기능2</a>
+
+</body>
+</html>
