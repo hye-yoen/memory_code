@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    
+    /* common */
+    *{
+        font-size: 1rem;
+        box-sizing: border-box; 
+    }
+    a{
+        text-decoration: none;
+        color : black;
+    }
+    body{
+        margin : 100;
+        padding : 0;
+    }
+
+
+    /* form */
+    form{
+        width : 400px;
+        border :1px solid;
+        margin :0 auto;
+    }
+    form>.row{
+        margin : 10px;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        gap : 5px;
+        height: 50px;
+    }
+    form>.row>label{
+        display: block;
+        min-width: 85px;
+        height:100% ;
+        line-height: 50px;
+    }
+    
+    form>.row>input[type="text"],
+    form>.row>input[type="password"]{
+        height: 100%;
+        width: 100%;
+        outline : none;
+        border-radius: 0;
+        border : 1px solid rgb(47, 194, 14,0.5);
+    }
+
+    .title{
+        margin-bottom: 30px !important;
+    }
+    .title>h1{
+        width : 100%;
+        text-align: center;
+        font-size: 2.5rem;
+        color :rgb(47, 194, 14,1);
+        border-bottom:1px solid lightseagreen;
+        padding: bottom 10px;
+    }
+
+
+   </style>
+</head>
+<body>
+    <form action="/test.jsp" method="post">
+        <div class = "row title" >
+            <h1>naver</h1>
+        </div>
+        <div class = "row2">
+            <input name="agree1" type = "checkbox"/>
+            <label>실명인증된 아이디로 가입</label>
+        </div>
+        <div class = "row">
+            <input nama="userid" placeholder = "아이디" type = "text"/>@naver.com
+            <a class = "btn" href="javascript:void(0)">중복확인</a>
+            <!--  -->
+        </div>
+        <div class = "row">
+            <input nama="userpassword"  placeholder = "비닐번호" type = "password"/>
+        </div>
+        <div class = "row">
+            <input name="agree2" placeholder = "비닐번호 찾기 등 본인 확인용)" type="text"/>
+        </div>
+        <!-- <div class = "row">
+            <label>아이디, 비닐번호: 필수 정보 입니다</label>
+        </div> -->
+        <div class = "row">
+            <input name="username" placeholder="이름" type="text"/>
+        </div>
+        <div class = "row">
+            <input name="userbirth" placeholder="생년월일 8자리" type="text"/>
+        </div>
+        <div class = "row">
+            <input name="usertele" placeholder="통신사 선택" type="text"/>
+        </div>
+        <div class = "row">
+            <span>
+                <input id="man" type="checkbox"/>
+                <label>남자</label>
+                <input id="woman" type="checkbox"/>
+                <label>여자</label>
+            </span>
+            <span>
+                <input id="in_k" type="checkbox"/>
+                <label for="in_k">내국인</label>
+                <input id="out_k" type="checkbox"/>
+                <label for="out_k">외국인</label>
+            </span>
+        </div>
+         <!-- <div class = "row">
+            <label>이름: 필수 정보 입니다. </label>
+            <br />
+            <label>생년월일: 필수 정보 입니다. </label>
+        </div> -->
+         <div class = "row">
+            <input name="pnum" placeholder="휴대전화번호" type="text"/>
+        </div>
+
+        <div class = "row3">
+            <input id="agree3" type="radio"/>
+            <label name="agree3">[필수]</label>
+            <label>인증 약관 전체 동의</label>
+        </div>
+
+        <div class = "row">
+            <input type="submit" value="인증요청"/>          
+        </div>
+
+    </form>
+</body>
+</html>
