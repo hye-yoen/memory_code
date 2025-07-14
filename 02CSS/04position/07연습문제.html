@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{box-sizing: border-box;}
+        ul{ padding: 0;
+            margin: 0;
+            list-style: none;
+            /* border: 1px solid; */
+        }
+        a{text-decoration: none; color : black}
+        body{
+            margin: 10; padding: 10;
+            /* border: 1px solid; */
+        }
+        .wrapper{}
+        header{}
+        nav{
+            /* border: 1px solid; */
+        }
+        .main-menu{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .main-menu>li{
+           /* background-color: aquamarine; */
+        }
+        .main-menu>li>a{
+        /* background-color: antiquewhite;*/
+        }
+        .main-menu>li>a>.sub-menu{}
+        .main-menu>li>a>.sub-men>li{}
+        .main-menu>li>a>.sub-men>li>a{}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="top-header"></div>
+            <nav>
+
+                <!-- ul.main-menu>li*4>a[href="javascript:void(0)"]{$_MAINMENU}+ul.sub-menu>li*5>a[href="javascript:void(0)"]{$_SUBMENU} -->
+                <ul class="main-menu">
+                    <li>
+                        <a href="javascript:void(0)">1_MAINMENU</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_SUBMENU</a></li>
+                            <li><a href="javascript:void(0)">2_SUBMENU</a></li>
+                            <li><a href="javascript:void(0)">3_SUBMENU</a></li>
+                            <li><a href="javascript:void(0)">4_SUBMENU</a></li>
+                            <li><a href="javascript:void(0)">5_SUBMENU</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">2_MAINMENU</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_SUBMENU</a></li>
+                            <li><a href="javascript:void(0)">2_SUBMENU</a></li>
+                            <li><a href="javascript:void(0)">3_SUBMENU</a></li>
+                            <li><a href="javascript:void(0)">4_SUBMENU</a></li>
+                            <li><a href="javascript:void(0)">5_SUBMENU</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">3_MAINMENU</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_SUBMENU</a></li>
+                            <li><a href="javascript:void(0)">2_SUBMENU</a></li>
+                            <li><a href="javascript:void(0)">3_SUBMENU</a></li>
+                            <li><a href="javascript:void(0)">4_SUBMENU</a></li>
+                            <li><a href="javascript:void(0)">5_SUBMENU</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">4_MAINMENU</a>
+                        <ul class="sub-menu">
+                            <li><a href="javascript:void(0)">1_SUBMENU</a></li>
+                            <li><a href="javascript:void(0)">2_SUBMENU</a></li>
+                            <li><a href="javascript:void(0)">3_SUBMENU</a></li>
+                            <li><a href="javascript:void(0)">4_SUBMENU</a></li>
+                            <li><a href="javascript:void(0)">5_SUBMENU</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+
+
+
+
+
+            </nav>
+        </header>
+        <main>
+            <selection></selection>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>
