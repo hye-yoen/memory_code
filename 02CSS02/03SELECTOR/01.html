@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 전체선택자 */
+        *{box-sizing: border-box;}
+        /* 요소선택자 */
+        div{
+            width:150px;
+            height:150px;
+            border : 1px solid;
+            margin : 10px;
+        }
+        /* id선택자 : 유일한 요소 지정 */
+        #id_01{
+            background-color: red;
+        }
+
+        /* class선택자 : 특정 태그 그룹지정 */
+        .c1{
+            background-color: royalblue;
+        }
+        /* 그룹선택자 : , */
+
+        #id_01,
+        .c1{
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="c1"></div>
+    <div id="id_01"></div>
+    <div></div>
+    <div class="c1"></div>
+    <div>
+        <p class="c1">HELLOWORLD</p>
+    </div>
+
+
+</body>
+</html>

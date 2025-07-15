@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 자식요소 선택 : '>' -->
+
+    <!-- div>ul>li  -->
+    <div>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+
+    <!-- div>p>ul>li -->
+    <div>
+        <p>
+        <ul>
+            <li></li>
+        </ul>
+        </p>
+    </div>
+
+    <!-- 형제노드 : '+' -->
+    <!-- div>ol+ul -->
+    <div>
+        <ol></ol>
+        <ul></ul>
+    </div>
+
+    <!-- div>p+div+span -->
+    <div>
+        <p></p>
+        <div></div>
+        <span></span>
+    </div>
+
+    <!-- div>ul>li>a+ul -->
+    <div>
+        <ul>
+            <li>
+                <a href=""></a>
+                <ul></ul>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 상위태그 이동 : '^' -->
+
+    <!-- div>ul>li^p -->
+    <div>
+        <ul>
+            <li></li>
+        </ul>
+        <p></p>
+    </div>
+
+    <!-- 메뉴구조 만들기 -->
+
+    <!-- div>ul>li>a+ul>li*4 -->
+    <div>
+        <ul>
+            <li>
+                <a href=""></a>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- div>ul>li*5>a{$.MAINMENU}+ul>li*4>a{$.SUBMENU} -->
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ul.mainmenu {
+            height: 50px;
+            width: 100%;
+            border: 1px solid;
+
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 1280px;
+            margin: 0 auto;
+
+        }
+
+        ul.mainmenu>li {
+            height: 50px;
+            line-height: 50px;
+            padding: 0 20px;
+            border: 1px solid;
+            position: relative;
+        }
+
+        ul.mainmenu>li>a {
+            display: block;
+        }
+
+        ul.mainmenu>li>ul {
+            border: 1px solid;
+            display: none;
+            position: absolute;
+            left: 0;
+        }
+
+        ul.mainmenu>li>ul>li {
+            padding: 0 20px;
+        }
+
+        ul.mainmenu>li:hover ul {
+            display: block;
+        }
+    </style>
+    <div>
+        <ul class="mainmenu">
+            <li>
+                <a href="">1.MAINMENU</a>
+                <ul>
+                    <li><a href="">1.SUBMENU</a></li>
+                    <li><a href="">2.SUBMENU</a></li>
+                    <li><a href="">3.SUBMENU</a></li>
+                    <li><a href="">4.SUBMENU</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">2.MAINMENU</a>
+                <ul>
+                    <li><a href="">1.SUBMENU</a></li>
+                    <li><a href="">2.SUBMENU</a></li>
+                    <li><a href="">3.SUBMENU</a></li>
+                    <li><a href="">4.SUBMENU</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">3.MAINMENU</a>
+                <ul>
+                    <li><a href="">1.SUBMENU</a></li>
+                    <li><a href="">2.SUBMENU</a></li>
+                    <li><a href="">3.SUBMENU</a></li>
+                    <li><a href="">4.SUBMENU</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">4.MAINMENU</a>
+                <ul>
+                    <li><a href="">1.SUBMENU</a></li>
+                    <li><a href="">2.SUBMENU</a></li>
+                    <li><a href="">3.SUBMENU</a></li>
+                    <li><a href="">4.SUBMENU</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="">5.MAINMENU</a>
+                <ul>
+                    <li><a href="">1.SUBMENU</a></li>
+                    <li><a href="">2.SUBMENU</a></li>
+                    <li><a href="">3.SUBMENU</a></li>
+                    <li><a href="">4.SUBMENU</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- 클래스 선택자 : '.'  -->
+    <!-- .c1 -->
+    <div class="c1"></div>
+    <div class="abc"></div>
+
+    <!-- ID 선택자 : '#' -->
+    <!-- #wrapper  -->
+    <div id="wrapper"></div>
+    <span id="id2"></span>
+    <span class="abc"></span>
+
+    <!-- 속성추가 : '[]' -->
+    <!-- ol[type='I']>li*4{TEST $} -->
+    <ol type="I">
+        <li>TEST 1</li>
+        <li>TEST 2</li>
+        <li>TEST 3</li>
+        <li>TEST 4</li>
+    </ol>
+
+
+    <!-- 탬플릿 문서 구조 만들기 -->
+
+    <!-- .wrapper>header>.top-header+nav^main>section^footer -->
+    <div class="wrapper">
+        <header>
+            <div class="top-header"></div>
+            <nav></nav>
+        </header>
+        <main>
+            <section></section>
+        </main>
+        <footer></footer>
+    </div>
+
+
+    <!-- 
+        [단축키]
+
+        글자크기 축소/확대 : ctrl + '+' or ctrl + '-'
+        복사하기 : shift + alt + ↓
+        영역복사 : 영역지정(드래그) -> shift + alt + ↓
+        코드정리 : shift + alt + f
+    -->
+
+
+
+
+
+
+</body>
+
+</html>

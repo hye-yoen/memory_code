@@ -13,28 +13,44 @@
         }
         a{text-decoration: none; color : black}
         body{
-            margin: 10; padding: 10;
+            margin: 0; padding: 0;
             /* border: 1px solid; */
         }
         .wrapper{}
         header{}
         nav{
             /* border: 1px solid; */
+            height : 50px;
         }
         .main-menu{
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: orange;
         }
         .main-menu>li{
            /* background-color: aquamarine; */
         }
         .main-menu>li>a{
-        /* background-color: antiquewhite;*/
+            display: block;
+            height : 100%;
+            padding : 0 20px;
+            background-color: royalblue;
+            color: white;
         }
-        .main-menu>li>a>.sub-menu{}
-        .main-menu>li>a>.sub-men>li{}
-        .main-menu>li>a>.sub-men>li>a{}
+        ul.sub-menu{
+            display: block;
+            width: 100%;
+            height: 100%;
+            
+           
+        }
+        .main-menu>li>a>ul.sub-men>li{
+       
+        }
+        .main-menu>li>a>ul.sub-men>li>a{
+            
+        }
     </style>
 </head>
 <body>
