@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: black;
+            box-sizing: border-box
+        }
+
+        section>.backgroundmoutain {
+            width: 1920px;
+            height: 970px;
+            background-color: rgb(146, 240, 234);
+        }
+
+        section>.backgroundmoutain>.text1 {
+            /* border: 1px solid; */
+            width: 1620px;
+            height: 200px;
+            margin-left: 150px;
+            margin-right: 150px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: end;
+        }
+
+        section>.backgroundmoutain>.text1>p {
+            font-size: 2rem;
+        }
+
+        section>.backgroundmoutain>.text1>h1 {
+            font-size: 4rem;
+        }
+
+
+        .m1 {
+            /* border: 1px solid; */
+            padding: 20px;
+            padding-left: 150px;
+            padding-right: 150px;
+            display: flex;
+            gap: 100px;
+        }
+
+        .m1>.a {
+            width: 600px;
+            height: 300px;
+            /* border: 1px solid; */
+            padding-top: 90px;
+        }
+
+        .m1>.a>.mountain {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .m1>.a>.mountain>p:nth-child(1) {
+            font-size: 20px;
+        }
+
+        .m1>.a>.mountain>p:nth-child(2) {
+            font-size: 20px;
+        }
+
+        .m1>.a>.mountain>h2 {
+            font-size: 36px;
+            margin-bottom: 28px;
+        }
+
+        .m1>.a>.mountain>p:nth-child(3) {
+            font-size: 15px;
+        }
+
+        .m1>.a>.row {
+            margin-top: 25px;
+            /* border: 1px solid; */
+
+        }
+
+        .m1>.a>.row>.btn {
+            width: 187px;
+            height: 37px;
+            font-size: 0.8rem;
+        }
+
+        .m1>.a>.row>.btn-submit {
+
+            background-color: #1840b7;
+            color: white;
+            border-radius: 70px;
+        }
+
+        .a2 {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .m2 {
+            width: 800px;
+            height: 500px;
+            overflow: scroll;
+        }
+
+        .m2 img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .m_section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr ;
+            margin-bottom: 50px;
+        }
+
+        .item {
+            padding: 20px;
+            background-color: #ffffff;
+            text-align:start;
+        }
+        .item:nth-child(1){
+            border-radius: 15px 0 0 0 ;
+            border-bottom: 1px solid  rgb(205, 205, 205);
+            border-right: 1px solid  rgb(205, 205, 205);
+        }
+        .item:nth-child(2){
+            border-radius: 0 15px 0 0 ;
+            border-bottom: 1px solid  rgb(205, 205, 205);
+        }
+        .item:nth-child(3){
+            border-radius: 0 0 0 15px ;
+            border-right: 1px solid  rgb(205, 205, 205);
+        }
+        .item:nth-child(4){
+            border-radius: 0 0 15px 0 ;
+        }
+        
+        
+       
+    
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="backgroundmoutain">
+                <div class="text1">
+                    <p>푸른 나무 아래 전통이 숨 쉬는 도시, 대구</p>
+                    <h1>팔공산</h1>
+                </div>
+
+                <div class="m1">
+                    <div class="a">
+                        <div class="mountain">
+                            <p>제 1경</p>
+                            <p>소원을 이루어주는 바위와 단풍이 겹처진</p>
+                            <h2>팔공산</h2>
+                            <p>가을 철 화려한 단풍으로 유명하며 자연과 일상을 잠시 내려놓고 온전히 자신을 마주할 수 있는 곳이다.</p>
+                        </div>
+                        <div class="row">
+                            <input class="btn btn-submit" type="submit" value="팔공산 바로가기" />
+                        </div>
+                    </div>
+
+                    <div class="a2">
+                        <div class="m2">
+                            <a href="https://naver.com" target="_blank">
+                                <img src="https://images.mypetlife.co.kr/content/uploads/2022/12/16162807/IMG_1666-edited-scaled.jpg"
+                                    alt="이미지 로드 x">
+                            </a>
+                        </div>
+
+                        <div div class="m_section">
+                            <div class="item">여행 정보 더 보기</div>
+                            <div class="item">먹거리/숙소/쇼핑</div>
+                            <div class="item">축제</div>
+                            <div class="item">관광 VR 사이버 투어</div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+        </section>
+
+
+
+
+
+    </main>
+</body>
+
+</html>
