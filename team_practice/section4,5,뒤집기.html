@@ -7,32 +7,43 @@
     <title>Document</title>
     <style>
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: sans-serif;
+            font-size: 16px;
         }
 
         body {
+            background-color: white;
             color: black;
-            box-sizing: border-box
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 10px;
         }
 
         section>.backgroundmoutain {
             width: 1920px;
             height: 970px;
             background-color: rgb(146, 240, 234);
+            min-width: 520px;
             background-image: url("https://cdn.pixabay.com/photo/2023/10/27/17/11/birch-trees-8345812_1280.jpg");
-            /* background-image: url("https://cdn.pixabay.com/photo/2022/05/12/16/04/trees-7191822_1280.png"); */
             background-size: 1920px 970px;
-            
-
         }
 
+        /*background-image: url("https://cdn.pixabay.com/photo/2022/05/12/16/04/trees-7191822_1280.png");*/
+
+        /* 푸른나무~~팔공산 */
         section>.backgroundmoutain>.text1 {
             /* border: 1px solid; */
             width: 1620px;
+            min-width: 520px;
             height: 200px;
-            margin-left: 150px;
-            margin-right: 150px;
+            margin: 0 150px;
             padding: 10px;
             display: flex;
             flex-direction: column;
@@ -49,26 +60,41 @@
         }
 
 
+
+
+        /* (내용)-(이미지,표) felx처리 */
         .m1 {
             /* border: 1px solid; */
             padding: 20px;
-            padding-left: 150px;
-            padding-right: 150px;
+            padding: 0 150px;
             display: flex;
+            /* flex-direction: column; */
             gap: 100px;
+
+
         }
 
+
+
+
+
+        /* text , btn x */
         .m1>.a {
             width: 600px;
+            min-width: 300px;
             height: 300px;
             /* border: 1px solid; */
             padding-top: 90px;
+
+
+
         }
 
         .m1>.a>.mountain {
             display: flex;
             flex-direction: column;
             gap: 10px;
+
         }
 
         .m1>.a>.mountain>p:nth-child(1) {
@@ -88,6 +114,9 @@
             font-size: 15px;
         }
 
+
+
+        /* btn */
         .m1>.a>.row {
             margin-top: 25px;
             /* border: 1px solid; */
@@ -102,21 +131,30 @@
 
         .m1>.a>.row>.btn-submit {
 
-            background-color: #1840b7;
+            background-color: orange;
             color: white;
+            border: #ffffff;
             border-radius: 70px;
         }
 
+
+
+
+        /* image + 표 */
         .a2 {
             display: flex;
-            flex-direction: column;
             gap: 20px;
+            flex-direction: column;
+
+
         }
 
+        /* image */
         .m2 {
             width: 800px;
             height: 534px;
             /* border: 1px solid; */
+
 
         }
 
@@ -128,11 +166,15 @@
             object-fit: contain;
         }
 
-        .m_section {
+        /* 표 */
+        .m3 {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             margin-bottom: 50px;
+            
+
+
         }
 
         .item {
@@ -174,11 +216,12 @@
         <section>
             <div class="backgroundmoutain">
                 <div class="text1">
-                    <p>푸른 나무 아래 전통이 숨 쉬는 도시, 대구</p>
+                    <p>단풍 아래 전통이 숨 쉬는 도시, 대구</p>
                     <h1>팔공산</h1>
                 </div>
 
                 <div class="m1">
+
                     <div class="a">
                         <div class="mountain">
                             <p>제 1경</p>
@@ -192,6 +235,7 @@
                     </div>
 
                     <div class="a2">
+
                         <div class="m2">
                             <a href="https://naver.com" target="_blank">
                                 <img src="https://cdn.esgeconomy.com/news/photo/202305/3660_5045_3513.jpg"
@@ -199,17 +243,15 @@
                             </a>
                         </div>
 
-                        <div div class="m_section">
-                            <div class="item">
-                                <span> 여행 정보 더 보기</span>
-                            </div>
-                            <div class="item">먹거리/숙소/쇼핑</div>
-                            <div class="item">축제</div>
-                            <div class="item">관광 VR 사이버 투어</div>
-                        </div>
-
-
                     </div>
+
+                </div>
+
+                <div div class="m3">
+                    <div class="item"> 여행 정보 더 보기</div>
+                    <div class="item">먹거리/숙소/쇼핑</div>
+                    <div class="item">축제</div>
+                    <div class="item">관광 VR 사이버 투어</div>
                 </div>
 
 

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        section:nth-child(1) {
+            border: 1px solid;
+            width: 1920px;
+            height: 500px;
+            background-image: url("https://www.hyundai.com/content/dam/hyundai/kr/ko/images/brand/brandstory/brand-philosophy-2024-kv-w.jpg");
+            background-size: 1920px 500px;
+
+        }
+
+        section:nth-child(1)>.a1 {
+            width: 100%;
+            height: 100%;
+            color: aliceblue;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 40px;
+            margin: 150px;
+        }
+
+        section:nth-child(1)>.a1>.name:nth-child(1) {
+            font-size: 3rem;
+            font-weight: 1000;
+        }
+
+        section:nth-child(1)>.a1>.name:nth-child(2) {
+            font-size: 2rem;
+            font-weight: 200;
+        }
+
+
+        .a2 {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .a2>h2 {
+            margin-bottom: 15px;
+        }
+
+        section:nth-child(3) {
+            display: flex;
+            align-items:start;
+            gap: 30px;
+            /* justify-content: center; *//*이거 왜 안됨?*/
+            margin: 0 150px;
+        }
+        section:nth-child(3)>.a3>h2{
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="top-header"></div>
+            <nav></nav>
+        </header>
+        <main>
+
+            <section>
+                <div class="a1">
+
+                    <div class="name">브랜드</div>
+                    <div class="name">현대자동차의 비전</div>
+
+                </div>
+            </section>
+
+            <section>
+                <div class="a2">
+                    <h2>브랜드</h2>
+                    <h2>현대자동차의 비전</h2>
+                    <p>현대자동차가 지금까지 걸어온 길의 중심에는</p>
+                    <p>"사회화 국가에 대한 헌신과 기여", 즉 인류애 (Humanity)가 늘 함께 해왔습니다. </p>
+                </div>
+            </section>
+
+            <section>
+
+                <a href="https://naver.com" target="_blank">
+                    <img src="https://www.hyundai.com/content/dam/hyundai/kr/ko/images/brand/brandstory/brand-philosophy-2024-01.jpg"
+                        alt="이미지 로드 x">
+                </a>
+                <div class="a3">
+                    <h2>함께 나아가는 미래</h2>
+                    <p>
+                        기술 발전은 인류애에 바탕을 두고 있을 때 비로소 의미가 있습니다.
+                        현대자동차는 로보틱스, AAM(Advanced Air Mobility) 등의 미래 모빌리티,
+                        그리고 수소 에너지까지 확장된 사업 영역을 영위하며 휴머니티의 관점에서 더욱 크고
+                        의미 있는 뜻을 실현하고, 인류를 위해 옳은 일을 하고자 합니다.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h1>우리의 비전</h1>
+                <h1>휴머니티를 향한 진보</h1>
+            </section>
+            <section>
+                <div class="a4">
+                    <h2>우리는 인류를 위해 옳은 일을 하고자 존재합니다.</h2>
+                    <h2>
+                        진정한 진보는 인류에 대한 깊은 공감을 바탕으로 이루어 집니다.
+                        인류애를 가질 때 우리는 하나가 되고 강해질 수 있습니다.
+                    </h2>
+                    <h2>우리는 인류가 더 나은 방향으로 나아가도록 기여하기 위해 존재합니다.</h2>
+                </div>
+            </section>
+            <!-- 내용 임시 끝! -->
+            <section></section>
+            <section></section>
+            <section></section>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+
+</html>

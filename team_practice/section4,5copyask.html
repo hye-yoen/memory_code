@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+
+        section>.backgroundmoutain {
+            width: 1920px;
+            /* height: 970px; */
+            height: auto;
+            background-color: rgb(146, 240, 234);
+            /* background-image: url("https://cdn.pixabay.com/photo/2023/10/27/17/11/birch-trees-8345812_1280.jpg");
+            background-size: 1920px 970px; */
+            position: relative;
+        }
+        
+
+        /* 1. 이미지 body태그로
+        2. 포지션 저장
+         */
+
+        /* 푸른나무~~팔공산 */
+        section>.backgroundmoutain>.text1 {
+            /* border: 1px solid; */
+            width: 1620px;
+            min-width: 520px;
+            height: 200px;
+            margin: 0 150px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: end;
+        }
+
+        section>.backgroundmoutain>.text1>p {
+            font-size: 2rem;
+        }
+
+        section>.backgroundmoutain>.text1>h1 {
+            font-size: 4rem;
+        }
+
+
+
+
+        /* (내용)-(이미지,표) felx처리 */
+        .m1 {
+            /* border: 1px solid; */
+            padding: 20px;
+            padding: 0 150px;
+            display: flex;
+            /* flex-direction: column; */
+            gap: 100px;
+
+            
+        }
+        
+
+
+
+
+        /* text , btn x */
+        .m1>.a {
+            width: 600px;
+            min-width: 300px;
+            height: 300px;
+            /* border: 1px solid; */
+            padding-top: 90px;
+            
+            
+            
+        }
+
+        .m1>.a>.mountain {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+        }
+
+        .m1>.a>.mountain>p:nth-child(1) {
+            font-size: 20px;
+        }
+
+        .m1>.a>.mountain>p:nth-child(2) {
+            font-size: 20px;
+        }
+
+        .m1>.a>.mountain>h2 {
+            font-size: 36px;
+            margin-bottom: 28px;
+        }
+
+        .m1>.a>.mountain>p:nth-child(3) {
+            font-size: 15px;
+        }
+
+
+
+        /* btn */
+        .m1>.a>.row {
+            margin-top: 25px;
+            /* border: 1px solid; */
+
+        }
+
+        .m1>.a>.row>.btn {
+            width: 187px;
+            height: 37px;
+            font-size: 0.8rem;
+        }
+
+        .m1>.a>.row>.btn-submit {
+
+            background-color: orange;
+            color: white;
+            border: #ffffff;
+            border-radius: 70px;
+        }
+
+
+
+
+        /* image + 표 */
+        .a2 {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+
+
+        }
+        /* image */
+        .m2 {
+            width: 800px;
+            height: 534px;  
+         
+
+
+        }
+
+        .m2 img {
+            width: 100%;
+            height: auto;
+            /* border: 1px solid black; */
+            border-radius: 15px;
+            object-fit: contain;
+        }
+
+        /* 표 */
+        .m3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            margin-bottom: 50px;
+
+            
+
+        }
+
+        .item {
+            padding: 20px;
+            background-color: #ffffff;
+            text-align: start;
+        }
+
+        /* 정말 답이 없는 경우 사용 */
+        /* .item:nth-child(1)::after{content:'🗺️';}
+        .item:nth-child(2)::after{content:'🛍️';}
+        .item:nth-child(3)::after{content:'🎡';}
+        .item:nth-child(4)::after{content:'👀';} */
+
+        .item:nth-child(1) {
+            border-radius: 15px 0 0 0;
+            border-bottom: 1px solid rgb(205, 205, 205);
+            border-right: 1px solid rgb(205, 205, 205);
+        }
+
+        .item:nth-child(2) {
+            border-radius: 0 15px 0 0;
+            border-bottom: 1px solid rgb(205, 205, 205);
+        }
+
+        .item:nth-child(3) {
+            border-radius: 0 0 0 15px;
+            border-right: 1px solid rgb(205, 205, 205);
+        }
+
+        .item:nth-child(4) {
+            border-radius: 0 0 15px 0;
+        }
+        
+        @media screen and (max-width:1024px) {
+               .a2{
+                width :100%;
+                /* border : 10px solid red; */
+                position:absolute;
+                left:150px;
+                top:600px;
+               }
+               .item{
+                display: grid;
+                width: 300px;
+                height: 50px;
+               }
+            /*폰트, display 블럭 설정*/
+
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="backgroundmoutain">
+                <div class="text1">
+                    <p>단풍 아래 전통이 숨 쉬는 도시, 대구</p>
+                    <h1>팔공산</h1>
+                </div>
+
+                <div class="m1">
+
+                    <div class="a">
+                        <div class="mountain">
+                            <p>제 1경</p>
+                            <p>소원을 이루어주는 바위와 단풍이 겹처진</p>
+                            <h2>팔공산</h2>
+                            <p>가을 철 화려한 단풍으로 유명하며 자연과 일상을 잠시 내려놓고 온전히 자신을 마주할 수 있는 곳이다.</p>
+                        </div>
+                        <div class="row">
+                            <input class="btn btn-submit" type="submit" value="팔공산 바로가기" />
+                        </div>
+                    </div>
+                    
+                    <div class="a2">
+
+                        <div class="m2">
+                            <a href="javascript:void(0)">
+                                <img src="https://cdn.esgeconomy.com/news/photo/202305/3660_5045_3513.jpg"
+                                    alt="이미지 로드 x">
+                            </a>
+                        </div>
+
+                        <div div class="m3">
+                            <div class="item"> 여행 정보 더 보기</div>
+                            <div class="item">먹거리/숙소/쇼핑</div>
+                            <div class="item">축제</div>
+                            <div class="item">관광 VR 사이버 투어</div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+        </section>
+
+
+
+
+
+    </main>
+</body>
+
+</html>
