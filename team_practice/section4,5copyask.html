@@ -26,16 +26,18 @@
             border-radius: 10px;
         }
 
+
         section>.backgroundmoutain {
             width: 1920px;
-            /* height: 970px; */
-            height: auto;
+            height: 970px;
+            position: relative;
             background-color: rgb(146, 240, 234);
             /* background-image: url("https://cdn.pixabay.com/photo/2023/10/27/17/11/birch-trees-8345812_1280.jpg");
             background-size: 1920px 970px; */
-            position: relative;
+
+            min-width: 800px;
         }
-        
+
 
         /* 1. 이미지 body태그로
         2. 포지션 저장
@@ -43,9 +45,7 @@
 
         /* 푸른나무~~팔공산 */
         section>.backgroundmoutain>.text1 {
-            /* border: 1px solid; */
             width: 1620px;
-            min-width: 520px;
             height: 200px;
             margin: 0 150px;
             padding: 10px;
@@ -53,6 +53,8 @@
             flex-direction: column;
             align-items: start;
             justify-content: end;
+
+            /* border: 1px solid; */
         }
 
         section>.backgroundmoutain>.text1>p {
@@ -75,9 +77,9 @@
             /* flex-direction: column; */
             gap: 100px;
 
-            
+
         }
-        
+
 
 
 
@@ -85,13 +87,12 @@
         /* text , btn x */
         .m1>.a {
             width: 600px;
-            min-width: 300px;
             height: 300px;
             /* border: 1px solid; */
             padding-top: 90px;
-            
-            
-            
+
+            /* border : 1px solid; */
+
         }
 
         .m1>.a>.mountain {
@@ -144,19 +145,12 @@
 
 
 
-        /* image + 표 */
-        .a2 {
-            display: flex;
-            gap: 20px;
-            flex-direction: column;
-
-
-        }
         /* image */
         .m2 {
+            display: block;
             width: 800px;
-            height: 534px;  
-         
+            height: 534px;
+
 
 
         }
@@ -171,12 +165,17 @@
 
         /* 표 */
         .m3 {
+            position: relative;
+
+            top: 10px;
+            left: 850px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             margin-bottom: 50px;
+            width: 800px;
 
-            
+
 
         }
 
@@ -211,20 +210,54 @@
         .item:nth-child(4) {
             border-radius: 0 0 15px 0;
         }
-        
-        @media screen and (max-width:1024px) {
-               .a2{
-                width :100%;
+
+        @media screen and (max-width:862px) {
+            section>.backgroundmoutain {
+                width: 100%;
+                height: 1150px;
+                background-color: rgb(204, 240, 146);
+            }
+
+            section>.backgroundmoutain>.text1 {
+                width: 600px;
+                height: 200px;
+                margin: 0 130px;
+
+                border: 1px solid;
+            }
+
+            .m2 {
+                width: 550px;
                 /* border : 10px solid red; */
-                position:absolute;
-                left:150px;
-                top:600px;
-               }
-               .item{
-                display: grid;
-                width: 300px;
-                height: 50px;
-               }
+                position: absolute;
+                left: 130px;
+                top: 600px;
+                height: auto;
+            }
+            .m2 img {
+            width: 100%;
+            }
+
+
+
+            .m3 {
+
+                top: 490px;
+                left: 130px;
+                width: 550px;
+                /* border: 1px solid; */
+
+
+
+            }
+
+            .item {
+                padding: 20px;
+                background-color: #ffffff;
+                text-align: start;
+                border-radius: 5px;
+            }
+
             /*폰트, display 블럭 설정*/
 
         }
@@ -253,25 +286,23 @@
                             <input class="btn btn-submit" type="submit" value="팔공산 바로가기" />
                         </div>
                     </div>
-                    
-                    <div class="a2">
 
-                        <div class="m2">
-                            <a href="javascript:void(0)">
-                                <img src="https://cdn.esgeconomy.com/news/photo/202305/3660_5045_3513.jpg"
-                                    alt="이미지 로드 x">
-                            </a>
-                        </div>
 
-                        <div div class="m3">
-                            <div class="item"> 여행 정보 더 보기</div>
-                            <div class="item">먹거리/숙소/쇼핑</div>
-                            <div class="item">축제</div>
-                            <div class="item">관광 VR 사이버 투어</div>
-                        </div>
-
+                    <div class="m2">
+                        <a href="javascript:void(0)">
+                            <img src="https://cdn.esgeconomy.com/news/photo/202305/3660_5045_3513.jpg" alt="이미지 로드 x">
+                        </a>
                     </div>
 
+
+
+                </div>
+
+                <div div class="m3">
+                    <div class="item"> 여행 정보 더 보기</div>
+                    <div class="item">먹거리/숙소/쇼핑</div>
+                    <div class="item">축제</div>
+                    <div class="item">관광 VR 사이버 투어</div>
                 </div>
 
 
