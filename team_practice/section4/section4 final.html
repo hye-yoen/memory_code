@@ -26,29 +26,45 @@
             border-radius: 10px;
         }
 
+
         section>.backgroundmoutain {
             width: 1920px;
             height: 970px;
-            background-color: rgb(146, 240, 234);
-            min-width: 520px;
-            background-image: url("https://cdn.pixabay.com/photo/2023/10/27/17/11/birch-trees-8345812_1280.jpg");
-            background-size: 1920px 970px;
+            position: relative;
+            /* background-color: rgb(146, 240, 234); */
+            min-width: 800px;
         }
 
-        /*background-image: url("https://cdn.pixabay.com/photo/2022/05/12/16/04/trees-7191822_1280.png");*/
+        .image1 {
+            position: absolute;
+            left: -150px;
+            width: 1920px;
+            height: 970px;
+            z-index: 0;
+        }
 
-        /* 푸른나무~~팔공산 */
+        .image1 img {
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            object-fit: fill;
+        }
+
+
+
+        /* 제목 text  */
         section>.backgroundmoutain>.text1 {
-            /* border: 1px solid; */
+            position: relative;
             width: 1620px;
-            min-width: 520px;
             height: 200px;
-            margin: 0 150px;
+            left: 150px;
             padding: 10px;
             display: flex;
             flex-direction: column;
             align-items: start;
             justify-content: end;
+
+            /* border: 1px solid; */
         }
 
         section>.backgroundmoutain>.text1>p {
@@ -62,9 +78,10 @@
 
 
 
-        /* (내용)-(이미지,표) felx처리 */
+        /* (내용)-(이미지,표) */
         .m1 {
             /* border: 1px solid; */
+            position: relative;
             padding: 20px;
             padding: 0 150px;
             display: flex;
@@ -81,12 +98,10 @@
         /* text , btn x */
         .m1>.a {
             width: 600px;
-            min-width: 300px;
             height: 300px;
-            /* border: 1px solid; */
             padding-top: 90px;
 
-
+            /* border : 1px solid; */
 
         }
 
@@ -140,20 +155,12 @@
 
 
 
-        /* image + 표 */
-        .a2 {
-            display: flex;
-            gap: 20px;
-            flex-direction: column;
-
-
-        }
-
         /* image */
         .m2 {
+            display: block;
             width: 800px;
             height: 534px;
-            /* border: 1px solid; */
+
 
 
         }
@@ -168,11 +175,16 @@
 
         /* 표 */
         .m3 {
+            position: relative;
+
+            top: 10px;
+            left: 850px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             margin-bottom: 50px;
-            
+            width: 800px;
+
 
 
         }
@@ -183,11 +195,6 @@
             text-align: start;
         }
 
-        /* 정말 답이 없는 경우 사용 */
-        /* .item:nth-child(1)::after{content:'🗺️';}
-        .item:nth-child(2)::after{content:'🛍️';}
-        .item:nth-child(3)::after{content:'🎡';}
-        .item:nth-child(4)::after{content:'👀';} */
 
         .item:nth-child(1) {
             border-radius: 15px 0 0 0;
@@ -208,6 +215,72 @@
         .item:nth-child(4) {
             border-radius: 0 0 15px 0;
         }
+
+        @media screen and (max-width:862px) {
+            section>.backgroundmoutain {
+                width: 100%;
+                height: 1150px;
+                background-color: rgb(204, 240, 146);
+            }
+
+            .image1 {
+                position: absolute;
+                left: 0px;
+                width: 862px;
+                height: 1150px;
+                z-index: 0;
+            }
+
+            .image1 img {
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                object-fit: cover;
+            }
+
+
+            section>.backgroundmoutain>.text1 {
+                width: 600px;
+                height: 200px;
+                /* margin: 0 130px; */
+
+                /* border: 1px solid; */
+            }
+
+            .m2 {
+                width: 550px;
+                /* border : 10px solid red; */
+                position: absolute;
+                left: 130px;
+                top: 400px;
+                height: auto;
+            }
+
+            .m2 img {
+                width: 100%;
+            }
+
+
+
+            .m3 {
+
+                top: 490px;
+                left: 130px;
+                width: 550px;
+                /* border: 1px solid; */
+
+
+
+            }
+
+            .item {
+                padding: 20px;
+                background-color: #ffffff;
+                text-align: start;
+                border-radius: 5px;
+            }
+
+        }
     </style>
 </head>
 
@@ -215,6 +288,9 @@
     <main>
         <section>
             <div class="backgroundmoutain">
+                <div class="image1">
+                    <img src="https://cdn.pixabay.com/photo/2023/10/27/17/11/birch-trees-8345812_1280.jpg" />
+                </div>
                 <div class="text1">
                     <p>단풍 아래 전통이 숨 쉬는 도시, 대구</p>
                     <h1>팔공산</h1>
@@ -234,16 +310,14 @@
                         </div>
                     </div>
 
-                    <div class="a2">
 
-                        <div class="m2">
-                            <a href="https://naver.com" target="_blank">
-                                <img src="https://cdn.esgeconomy.com/news/photo/202305/3660_5045_3513.jpg"
-                                    alt="이미지 로드 x">
-                            </a>
-                        </div>
-
+                    <div class="m2">
+                        <a href="javascript:void(0)">
+                            <img src="https://cdn.esgeconomy.com/news/photo/202305/3660_5045_3513.jpg" alt="이미지 로드 x">
+                        </a>
                     </div>
+
+
 
                 </div>
 
