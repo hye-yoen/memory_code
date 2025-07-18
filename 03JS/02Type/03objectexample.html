@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="a">
+        국어점수 : <input id = "korean"><br />
+        <button ID = "save1">저장</button>
+        수학점수 : <input id = "math"><br />
+        <button ID = "save2">저장</button>
+        영어점수 : <input id = "english"><br />
+        <button ID = "save3">저장</button>
+    </div>
+    <hr />
+    <div> 총합 : </div>
+    <button onclick="score.sum1()">확인</button>
+    <div> 평균 : </div>
+    <button onclick="score.average()">확인</button>
+
+    <script>
+        // 속성
+        const score = {
+            // 속성
+            korean : 0,
+            english : 0,
+            math : 0,
+            //기능
+            sum1: function () {
+                const korean = document.getElementById('korean').value;
+                const math = document.getElementById('math').value;
+                const english = document.getElementById('english').value;
+                this.total = parseInt(korean)+parseInt(english)+parseInt(math); 
+                console.log(" total : ", this.total);
+            },
+            average: function () {
+                const korean = document.getElementById('korean').value;
+                const math = document.getElementById('math').value;
+                const english = document.getElementById('english').value;
+                this.average1 = (parseInt(korean)+parseInt(english)+parseInt(math))/3;
+                console.log(" total : ", this.average1);
+            }
+        }
+
+        const saveBtn1 = document.getElementById("save1");
+        saveBtn1.addEventListener('click',function(){
+            const koreanInputEl = document.getElementById('korean');
+            score.korean=koreanInputEl.value;
+            console.log('save :',score);
+        });
+        const saveBtn2 = document.getElementById("save2");
+        saveBtn2.addEventListener('click',function(){
+            const mathInputEl = document.getElementById('math');
+            score.math= mathInputEl.value;
+            console.log('save :',score);
+        });
+        const saveBtn3 = document.getElementById("save3");
+        saveBtn3.addEventListener('click',function(){
+            const englishInputE1 = document.getElementById('english');
+            score.english= englishInputE1.value;
+            console.log('save :',score);
+        });
+            
+
+    </script>
+
+</body>
+
+</html>

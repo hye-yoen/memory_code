@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: white;
+            color: black;
+        }
+
+        section {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+
+
+        section>.b1 {
+            width: 1920px;
+            height: auto;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            /* background-color: rgb(146, 240, 234); */
+
+        }
+        
+        /* btn */ 
+        .row {
+            border: 1px solid;
+
+        }
+
+        .row>.btn {
+            width: 210px;
+            height: 70px;
+            font-size: 2rem;
+            
+        }
+
+        .row:nth-child(1)>.btn-submit {
+
+            background-color: rgb(223, 58, 58);
+            color: white;
+            border: #ffffff;
+            border-radius: 70px 70px 0 70px;
+        }
+        .row:nth-child(2)>.btn-submit {
+
+            background-color: rgb(255, 255, 255);
+            color: black;
+            border: 5px solid lightgray;
+            border-radius: 70px 70px 70px 0 ;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="b1">
+                <div class="row">
+                    <input class="btn btn-submit" type="submit" value="주요서비스" />
+                </div>
+                <div class="row">
+                    <input class="btn btn-submit" type="submit" value="분야별 정보" />
+                </div>
+                <div></div>
+        </section>
+
+        <section>
+            <div class="grid1">
+                <div class="item">
+                    <a href="javascript:void(0)">
+                        <img src="" alt="이미지 로드 아직x">
+                    </a>
+                </div>
+                <div class="gredtext">icon1</div>
+            </div>
+
+
+
+        </section>
+
+
+    </main>
+</body>
+
+</html>

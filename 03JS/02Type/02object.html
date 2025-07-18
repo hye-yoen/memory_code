@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="poppi.sound()">뽀삐 짖어!</button>
+    
+    <hr/>
+    <h1>MY CAR</h1>
+    소유자 :<input id="owner" /><br />
+    차종 :<input id="cat" /><br />
+    연료타입 : <input id="fuelType" /><br />
+    <button ID = "save">저장하기</button>
+    <hr/>
+    <button onClick="myCar.accel()">가속</button>
+    <button onClick="myCar.break()">감속</button>
+    <button onClick="myCar.toString()">상태확인</button>
+    <h2>대시보드</h2>
+    <div id="gauge" style="transition:0.5s;height: 50px ; width: 0px;background-color: orange;"></div>
+
+    <script>
+        // Mycar : 속성 == 소유자 , 속도, 연료량,차종,연료타입....
+        const myCar = {
+            //속성
+            owner: "",
+            cat: "",
+            fuleType: "",
+            speed: 0,
+            fuelAmout: 100,
+            //기능
+            accel: function () {
+                this.speed = this.speed + 10;
+                console.log("가속처리완료 현재속도 : ", this.speed);
+
+                const gaugeEl = document.getElementById('gauge');
+                gaugeEl.style.width = `${this.speed * 2}px`;
+            },
+            break: function () {
+                this.speed = this.speed - 10;
+                console.log("감속처리완료 현재속도 : ", this.speed);
+
+                const gaugeEl = document.getElementById('gauge');
+                gaugeEl.style.width = `${this.speed * 2}px`;
+            },
+            toString: function () {
+                console.log(this.owner, this.cat, this.fuleType, this.speed, this.fuelAmout);
+            }
+
+        }
+
+       const saveBtn = document.getElementById('save');
+        saveBtn.addEventListener('click', () => {
+            const ownerInputEl = document.getElementById('owner');
+            const catInputEl = document.getElementById('cat');
+            const fuleTypeInputEl = document.getElementById('fuelType');
+            myCar.owner = ownerInputEl.value;
+            myCar.cat = catInputEl.value;
+            myCar.fuleType = fuleTypeInputEl.value;
+            console.log('save btn clicked..myCarInfo : ', myCar);
+        });
+
+
+
+
+
+
+
+
+        //-------------------------------------------------
+
+        //object 뜻? : 사물 < 객체(주체를 제외한 모든 !대상!) 
+        const poppi ={
+            //속성 -> 변수로 처리
+            name : "뽀비",
+            kind : "믹스견",
+            age : 1,
+            weight : 8.4,
+
+            //기능 -> 함수로 처리?
+            sound:function(){
+                alert(this.name+"아(가) 짖습니다.");
+
+            },
+            toString:function(){
+                console.log(this.name,this.kind,this.age,this.weight);
+            }
+        };
+
+        console.log(poppi);
+        console.log(poppi.name);
+        console.log(poppi.kind);
+        console.log(poppi.age);
+        console.log(poppi.weight);
+        // poppi.sound();
+        poppi.name='토리';
+        poppi.toString();
+        
+    </script>
+
+</body>
+</html>
