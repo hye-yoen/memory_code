@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 기본 스타일 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 1920px;
+            margin: 0 auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header.header {
+            width: 100%;
+            height: 100px;
+            border-bottom: 1px solid lightgray;
+            position: relative;
+            z-index: 2;
+        }
+
+        header .container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-logo img {
+            height: 60px;
+            object-fit: contain;
+        }
+
+
+        /* body */
+        .login-background {
+            background-color: aquamarine;
+            height: 850px;
+        }
+
+        .login-main {
+            position: relative;
+            width: 850px;
+            height: 700px;
+            background-color: #ffffff;
+            border: 10px solid lightseagreen;
+            top: 80px;
+            left: 525px;
+
+        }
+
+        h1 {
+            width: 400px;
+            height: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            position: relative;
+            left: 220px;
+            top: 30px;
+            border: 1px solid;
+        }
+
+        .z1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            top: 80px;
+            gap: 10px;
+
+        }
+
+
+
+        .btn2 {
+            width: 400px;
+            height: 40px;
+            font-size: 1rem;
+
+        }
+
+        .btn-submit2 {
+            border: 1px solid lightgray;
+            border-radius: 10px;
+        }
+
+        .z4 {
+            position: relative;
+            width: 400px;
+            top: 115px;
+            left: 215px;
+        }
+
+        .btn3 {
+            width: 100%;
+            height: 40px;
+            font-size: 1rem;
+
+        }
+
+        .btn-submit3 {
+
+            background-color: #00d5ffa3;
+            border: 1px solid rgb(255, 255, 255);
+            border-radius: 10px;
+
+        }
+
+        .z6 {
+            width: 100%;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .y2 {
+            width: 160px;
+            display: flex;
+            justify-content: space-around;
+            /* border: 1px solid; */
+        }
+
+        .z6_5 {
+            width: 100%;
+            margin-top: 60px;
+            border: 1px solid black;
+        }
+
+        .z7{
+            width: 300px;
+            position: relative;
+            left :265px;
+            top: 170px;
+        }
+        
+        .z8>.btn4 {
+            width: 100%;
+            height: 40px;
+            font-size: 1rem;
+
+        }
+
+        .z8>.btn-submit4 {
+
+            background-color: #069ebca3;
+            border: 1px solid rgb(255, 255, 255);
+            border-radius: 10px;
+
+        }
+
+        .z9{
+            margin-top: 20px;
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+
+        <div class="image1">
+            <!--  -->
+            <!-- <img src="https://cdn.pixabay.com/photo/2022/05/12/16/04/trees-7191822_1280.png" /> -->
+            <!--  -->
+        </div>
+        <header class="header">
+            <div class="container">
+                <div class="login-logo">
+                    <a href="#"><img src="./KakaoTalk_20250717_170402791.png" alt="대구특별시 로고" /></a>
+                </div>
+            </div>
+        </header>
+
+
+        <body>
+            <div class="login-background">
+                <div class="login-main">
+
+                    <h1>회원 로그인</h1>
+                    <div class="z1">
+                        <div class="z2">
+                            <input class="btn2 btn-submit2" type="text" placeholder="아이디를 입력하세요">
+                        </div>
+                        <div class="z3">
+                            <input class="btn2 btn-submit2" type="password" placeholder="비닐번호를 입력하세요">
+                        </div>
+                    </div>
+                    <div class="z4">
+                        <div class="z5">
+                            <input class="btn3 btn-submit3" type="submit" value="로그인" />
+                        </div>
+                        <div class="z6">
+                            <div class="y1">
+                                <input id="id_save" type="checkbox" />
+                                <label for="id_save">아이디 저장</label>
+                            </div>
+                            <div class="y2">
+                                <label>회원가입</label>
+                                <label>정보찾기</label>
+                            </div>
+                        </div>
+                        <div class="z6_5"></div>
+                    </div>
+
+                    <div class="z7">
+                        <div class="z8">
+                            <input class="btn4 btn-submit4" type="submit" value="간편로그인" />
+                        </div>
+
+                        <div class="z9">
+                            <div class="z9-btn">
+                                <a href="javcascript:void(0)">
+                                    <img src="./카카오톡.png" alt="카카오톡이미지" />
+                                </a>
+                            </div>
+                            <div class="z9-btn">
+                                <a href="javcascript:void(0)">
+                                    <img src="./네이버.png" alt="네이버이미지" />
+                                </a>
+                            </div>
+                            <div class="z9-btn">
+                                <a href="javcascript:void(0)">
+                                    <img src="./토스.png" alt="토스이미지" />
+                                </a>
+                            </div>
+                            <div class="z9-btn">
+                                <a href="javcascript:void(0)">
+                                    <img src="./하나은행.png" alt="하나은행이미지" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </body>
+
+    </div>
+</body>
+
+</html>
