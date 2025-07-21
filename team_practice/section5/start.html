@@ -27,7 +27,7 @@
         }
 
 
-        section>.b1 {
+        .b1 {
             width: 1920px;
             height: auto;
             position: relative;
@@ -38,11 +38,11 @@
 
         }
 
-        /* btn */
-        .row {
+        /* btn - 주요서비스 분야별 정보 */
+        /* .row {
             border: 1px solid;
 
-        }
+        } */
 
         .row>.btn {
             width: 210px;
@@ -68,27 +68,38 @@
         }
 
 
+        .parent-btn {
+            width: 1920px;
+            height: auto;
+            position: relative;
 
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
 
-
-        .grid-container {
-            margin: 20px;
-            padding: 20px;
-            border: 1px solid #ccc;
+            justify-content: center;
+            align-items: center;
         }
 
-        .item {
-            padding: 20px;
-            background-color: #f0f0f0;
-            border: 1px solid #999;
-            text-align: center;
+        .child-btn {
+            width: 146px;
+            height: 142px;
+            border: 10px solid pink;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
         }
 
-        .grid-responsive {
-            display: grid;                                           /* 그리드 레이아웃 설정 */
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 반응형 열 설정: 최소 200px, 남은 공간 균등 분할 */
-            gap: 10px;                                              /* 그리드 아이템 간 간격 10px 설정 */
-            margin-bottom: 30px;                                    /* 하단 여백 30px 설정 */
+        .child-btn>a>img{
+            width: 100px;
+            height: 100px;
+            display: flex;
+        }
+        .child-btn>.ch1{
+           color: #000;
+            font-size:15px ;
         }
     </style>
 </head>
@@ -107,7 +118,70 @@
         </section>
 
         <section>
-        
+            <div class="parent-btn">
+                <div class="child-btn">
+                    <a href="javcascript:void(0)">
+                        <img src="./상담사뚜봇.png"/>
+                    </a>
+                    <div class = "ch1">상담사뚜봇</div>
+                </div>
+                <div class="child-btn">
+                    <a href="javcascript:void(0)">
+                        <img src="./달구벌미소문자.png"/>
+                    </a>
+                    <div class = "ch1">달구별미소문자</div>
+                </div>
+                <div class="child-btn">
+                    <a href="javcascript:void(0)">
+                        <img src="./대구시정뉴스.png"/>
+                    </a>
+                    <div class = "ch1">대구시정뉴스</div>
+                </div>
+                <div class="child-btn">
+                    <a href="javcascript:void(0)">
+                        <img src="./대구특별시뉴스룸.png"/>
+                    </a>
+                    <div class = "ch1">대구특역시뉴스룸</div>
+                </div>
+                <div class="child-btn">
+                    <a href="javcascript:void(0)">
+                        <img src="./두드리소.png"/>
+                    </a>
+                    <div class = "ch1">두드리소</div>
+                </div>
+                <div class="child-btn">
+                    <a href="javcascript:void(0)">
+                        <img src="./토크대구.png"/>
+                    </a>
+                    <div class = "ch1">토크대구</div>
+                </div>
+                <div class="child-btn">
+                    <a href="javcascript:void(0)">
+                        <img src="./통합예약.png"/>
+                    </a>
+                    <div class = "ch1">통합예약</div>
+                </div>
+                <div class="child-btn">
+                    <a href="javcascript:void(0)">
+                        <img src="./대구관광.png"/>
+                    </a>
+                    <div class = "ch1">대구관광</div>
+                </div>
+                <div class="child-btn">
+                    <a href="javcascript:void(0)">
+                        <img src="./대구역사문화대전.png"/>
+                    </a>
+                    <div class = "ch1">대구역사문화대전</div>
+                </div>
+                <div class="child-btn">
+                    <a href="javcascript:void(0)">
+                        <img src="./금주의 퀴즈.png"/>
+                    </a>
+                    <div class = "ch1">금주의 퀴즈</div>
+                </div>
+               
+
+            </div>
 
 
 
@@ -118,4 +192,3 @@
 </body>
 
 </html>
-

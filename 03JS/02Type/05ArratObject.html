@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         // // 배열: 여려자료 type을 저장하기 위한 자료구조
@@ -54,49 +56,120 @@
         // //약식
         // arr2.sort((a,b)=> b-a); 
         // console.log(arr2);
-        
-        //필터 
-        let arr3 =[11,'str',22,"str2",33,`str3`,10.5,null,true,false,undefined,101,{name: "홍길동",age: 15}];
-        let result = arr3.filter((item)=>{return typeof item == "number"});
-        console.log(result);
-        let result1 = arr3.filter((item)=>{return typeof item == "string"});
-        console.log(result1);
 
-        //누산 : arr.reduce(()=>{},누산변수 초기값)
-        const sum = arr3.filter((item)=>{return typeof item == "number"})  //숫자값만 필터
-                          .reduce((sum,item)=>{return sum + item;},0);      //누적합 구하기
-        console.log(sum);
+        // //필터 
+        // let arr3 =[11,'str',22,"str2",33,`str3`,10.5,null,true,false,undefined,101,{name: "홍길동",age: 15}];
+        // let result = arr3.filter((item)=>{return typeof item == "number"});
+        // console.log(result);
+        // let result1 = arr3.filter((item)=>{return typeof item == "string"});
+        // console.log(result1);
+
+        // //누산 : arr.reduce(()=>{},누산변수 초기값)
+        // const sum = arr3.filter((item)=>{return typeof item == "number"})  //숫자값만 필터
+        //                   .reduce((sum,item)=>{return sum + item;},0);      //누적합 구하기
+        // console.log(sum);
 
 
-        //----------------------------------
-        // 배열object 처리 [{},{},{},{}...]
-        //----------------------------------
-        let arr_5 = [
-            {pid:"1",pname:"모니터",price:100,amount:50},
-            {pid:"2",pname:"노트북",price:200,amount:15},
-            {pid:"3",pname:"냉장고",price:250,amount:30},
-            {pid:"4",pname:"데스크탑",price:70,amount:19},
-            {pid:"5",pname:"가습기",price:10,amount:200},
-        ];
-        // console.log(arr_5);
-        // arr_5.forEach((item)=>{console.log(item)})
-        // arr_5.forEach(item=>console.log(item)) // 괄호 해제 가능 (하나일 경우에만)
-        // arr_5.forEach((item,index)=>{console.log(item)}) //2번째에 index 를 넣을 경우 순서확인 가능
-        // arr_5.forEach((item,index)=>{console.log(item["price"])}); //해당 키(price의 가격) 확인 완료
+        // //----------------------------------
+        // // 배열object 처리 [{},{},{},{}...]
+        // //----------------------------------
+        // let arr_5 = [
+        //     {pid:"1",pname:"모니터",price:100,amount:50},
+        //     {pid:"2",pname:"노트북",price:200,amount:15},
+        //     {pid:"3",pname:"냉장고",price:250,amount:30},
+        //     {pid:"4",pname:"데스크탑",price:70,amount:19},
+        //     {pid:"5",pname:"가습기",price:10,amount:200},
+        // ];
+        // // console.log(arr_5);
+        // // arr_5.forEach((item)=>{console.log(item)})
+        // // arr_5.forEach(item=>console.log(item)) // 괄호 해제 가능 (하나일 경우에만)
+        // // arr_5.forEach((item,index)=>{console.log(item)}) //2번째에 index 를 넣을 경우 순서확인 가능
+        // // arr_5.forEach((item,index)=>{console.log(item["price"])}); //해당 키(price의 가격) 확인 완료
 
-        //각 item의 가격이 100이상인 object만 필터링
-        // const filter_01 =arr_5.filter(item=> item["price"]>=100);
-        // console.log(filter_01);
-        // const filter_01 =arr_5.filter(item=> item.price>=100);
+        // //각 item의 가격이 100이상인 object만 필터링
+        // // const filter_01 =arr_5.filter(item=> item["price"]>=100);
+        // // console.log(filter_01);
+        // // const filter_01 =arr_5.filter(item=> item.price>=100);
+        // // console.log(filter_02);
+
+
+        // const filter_02 =arr_5.filter(item => item.amount<=30);
         // console.log(filter_02);
+        // //각 아이템의 가격이 100만원 이상인 item의 가격 총합(누적)을 구하세요
+        // const sum1 = arr_5.filter(item => item.price>=100).reduce((sum,item)=>{return sum +(item.price*item.amount)},0);
+        // console.log(sum1);
 
-        //각 아이템의 가격이 100만원 이상인 item의 가격 총합(누적)을 구하세요
-        const filter_02 =arr_5.filter(item=> item.price>=100);
-        console.log(filter_02);
-        const sum1 = filter_02.reduce((item,sum)=>{return item+sum;},0);
-        console.log(sum1);
+        // //재구성 배열.map(()=>{})
+        // let arr_6 = [
+        //     { pid: "1", pname: "모니터", price: 100, amount: 50 },
+        //     { pid: "2", pname: "노트북", price: 200, amount: 15 },
+        //     { pid: "3", pname: "냉장고", price: 250, amount: 30 },
+        //     { pid: "4", pname: "데스크탑", price: 70, amount: 19 },
+        //     { pid: "5", pname: "가습기", price: 10, amount: 200 },
+        // ];
 
+        // let maped_01 = arr_6.map((item)=>{
+        // item = {...item,"total_price":item.price*item.amount}; //아이템의 각각의 요소들을 가져올때 ...  사용
+        // console.log("!",item);
+        // return item;
+        // });
+        // console.log(maped_01);
+
+        // // 수량이 30 이상인 요소만 필터링 해서/ price가 낮은값 우선 오름차순 /price*amount항목 추가
+        // let maped_02 = arr_6.filter((item)=>{return item.amount>=30}).sort((a,b)=>{return a.price-b.price})
+        // .map((item)=>{
+        //     item={...item,"total_price":item.price*item.amount};
+        //     return item;
+        // });
+        // console.log(maped_02);
+
+
+        let employees = [
+            { id: 1, name: "김철수", age: 35, department: "개발", salary: 6000, years: 10 },
+            { id: 2, name: "이영희", age: 28, department: "디자인", salary: 5000, years: 5 },
+            { id: 3, name: "박지성", age: 40, department: "마케팅", salary: 7000, years: 15 },
+            { id: 4, name: "손흥민", age: 30, department: "개발", salary: 6500, years: 7 },
+            { id: 5, name: "정우성", age: 45, department: "경영", salary: 9000, years: 20 },
+            { id: 6, name: "한지민", age: 29, department: "디자인", salary: 5200, years: 6 },
+            { id: 7, name: "강호동", age: 50, department: "경영", salary: 8500, years: 25 },
+            { id: 8, name: "유재석", age: 42, department: "마케팅", salary: 7500, years: 18 },
+            { id: 9, name: "송중기", age: 32, department: "개발", salary: 6200, years: 8 },
+            { id: 10, name: "수지", age: 26, department: "디자인", salary: 4800, years: 3 }
+        ];
+        //연봉이(salary) 6000이상이면서 근속연수(years)가 
+        // 7년이상인(item.salary>=6000 && item.years>=7) 직원만 필터링해서 배열로 저장 확인
+        // const a_1 = employees.filter((item)=>{return item.salary>=6000 && item.years>=7});
+        // console.log(a_1);
+        
+        //모든 직원의 연봉(salary) 기준으로 내림차순 정렬한 배열 새로 만들기
+        // employees.sort((salary)=>{b.salary-a.salary});
+        // console.log(employees);
+        
+        //모든 직원의 연봉(salary) 에 근속연수*100 만큼의 보너스를 추가하여 
+        // total_salary필드를 추가한 배열을 반환
+        // const a_3 = employees.map((item)=>{
+        //     item ={...item,"total_salaly":item.salary+(item.years*100)};
+        //     return item;
+        // });
+        // console.log(a_3);
+
+        //department(부서) 별로 직원들의 연봉총합을 구하세요
+        const a_4 = employees.reduce((sum,item)=>{
+            sum[item.department]=sum[item.department]==undefined?item.salary:sum[item.department+item.salary];
+            // 위의 것 조건문 한 줄 처리
+            // console.log(sum);
+            return sum;
+        },{});
+        console.log(a_4);
+        // 연봉(salary)가 가장높은 직원을 찾아 객체하나만 반환(문서에서 find를 찾아보세요 - !)
+        const max_item = employees.sort((a,b)=> {return b.salary-a.salary},[0]);
+        console.log(max_item);
+
+        const max_item2 = employees.find((item)=>{return item.salary ==max_item.salary })
+        console.log(max_item2);
+        
     
     </script>
 </body>
+
 </html>

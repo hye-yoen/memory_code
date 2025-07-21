@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js2/대구맛집.js"></script>
+</head>
+<body>
+    
+    <script>
+        console.log("ALL DATA",대구맛집);
+
+        const datas = 대구맛집.data;
+        console.log("datas",datas)
+
+        const 한식datas = datas.filter((item)=>{return item.FD_CS=='한식'});
+        console.log("한식맛집",한식datas);
+
+        //BZ_NM  MNU GNG_CS
+        const 일식datas = datas.filter((item)=>{return item.FD_CS=='일식'}).map((item)=>{
+            item = {"BZ_NM":item.BZ_NM," MNU ":item.MNU, "GNG_CS": item.GNG_CS};
+            return item;
+        });
+        console.log("일식맛집",일식datas);
+        </script>
+</body>
+</html>
