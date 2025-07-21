@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // // 배열: 여려자료 type을 저장하기 위한 자료구조
+        // let arr=['str',"str2",`str3`,null,true,false,undefined,{name: "홍길동",age: 15}];
+        // console.log(typeof arr[0]);
+        // console.log(typeof arr[1]);
+        // console.log( typeof arr[2]);
+        // console.log(typeof arr[3]);
+        // console.log(typeof arr[4]);
+        // console.log(typeof arr[5]);
+        // console.log(typeof arr[6]);
+        // console.log(typeof arr[7]);
+        // console.log(typeof arr[8]);
+
+        // arr[8] = 100;
+        // console.log(arr);
+        // arr[10] ="Helloworld";
+        // console.log(arr);
+        // console.log(typeof arr[9]);
+
+        // // --------------------------------------------------
+        // // 배열함수 :push, pop
+        // // --------------------------------------------------
+        // arr.push('aaa')
+        // arr.push('bbb')
+        // arr.push('ccc')
+        // console.log(arr);
+        // arr.pop();
+        // console.log(arr);
+        // arr.pop();
+        // console.log(arr); 
+
+        // //  forEach
+        // console.log("------------------------------");
+        // arr.forEach((item)=>{ console.log('item',item); });
+
+
+        // // 정렬 
+        // let arr2 = [10,55,11,24,5,44,1,22];
+        // console.log(arr2);
+        // //오름차순 정렬
+        // arr2.sort((a,b)=>{return a-b});
+        // console.log(arr2); 
+        // //내림차순 정렬
+        // arr2.sort((a,b)=>{return b-a});
+        // console.log(arr2); 
+        // //약식
+        // arr2.sort((a,b)=> b-a); 
+        // console.log(arr2);
+        
+        //필터 
+        let arr3 =[11,'str',22,"str2",33,`str3`,10.5,null,true,false,undefined,101,{name: "홍길동",age: 15}];
+        let result = arr3.filter((item)=>{return typeof item == "number"});
+        console.log(result);
+        let result1 = arr3.filter((item)=>{return typeof item == "string"});
+        console.log(result1);
+
+        //누산 : arr.reduce(()=>{},누산변수 초기값)
+        const sum = arr3.filter((item)=>{return typeof item == "number"})  //숫자값만 필터
+                          .reduce((sum,item)=>{return sum + item;},0);      //누적합 구하기
+        console.log(sum);
+
+
+        //----------------------------------
+        // 배열object 처리 [{},{},{},{}...]
+        //----------------------------------
+        let arr_5 = [
+            {pid:"1",pname:"모니터",price:100,amount:50},
+            {pid:"2",pname:"노트북",price:200,amount:15},
+            {pid:"3",pname:"냉장고",price:250,amount:30},
+            {pid:"4",pname:"데스크탑",price:70,amount:19},
+            {pid:"5",pname:"가습기",price:10,amount:200},
+        ];
+        // console.log(arr_5);
+        // arr_5.forEach((item)=>{console.log(item)})
+        // arr_5.forEach(item=>console.log(item)) // 괄호 해제 가능 (하나일 경우에만)
+        // arr_5.forEach((item,index)=>{console.log(item)}) //2번째에 index 를 넣을 경우 순서확인 가능
+        // arr_5.forEach((item,index)=>{console.log(item["price"])}); //해당 키(price의 가격) 확인 완료
+
+        //각 item의 가격이 100이상인 object만 필터링
+        // const filter_01 =arr_5.filter(item=> item["price"]>=100);
+        // console.log(filter_01);
+        // const filter_01 =arr_5.filter(item=> item.price>=100);
+        // console.log(filter_02);
+
+        //각 아이템의 가격이 100만원 이상인 item의 가격 총합(누적)을 구하세요
+        const filter_02 =arr_5.filter(item=> item.price>=100);
+        console.log(filter_02);
+        const sum1 = filter_02.reduce((item,sum)=>{return item+sum;},0);
+        console.log(sum1);
+
+    
+    </script>
+</body>
+</html>
