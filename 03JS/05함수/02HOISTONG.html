@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*호이스팅
+        변수와 함수의 선언이 콛 실행전에 메모리에 미리 저장되는 현상
+        function 예약어 사용시 호이스팅 처리됨
+        var 예약어 사용시 호이스팅 처리됨
+        cf) 변수지정: let , var /  상수지정 : const
+        */
+        //변수 횡스팅 확인
+        // a= 10;
+        // console.log('a',a);
+        // var a; 
+        
+        // b= 10;
+        // console.log('b',b);
+        // let b; 
+        
+        // 함수 호이스팅 확인
+        
+        h1() ;
+        function h1(){
+            console.log("HELLO WORLD");
+        }
+        
+        const h2=() => {
+            console.log("HELLO WOLRD-2");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 기본 스타일 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #000;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .wrapper {
+            width: 100%;
+            max-width: 1920px;
+            margin: 0 auto;
+            min-width: 650px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header.header {
+            width: 100%;
+            height: 100px;
+            border-bottom: 1px solid lightgray;
+            position: relative;
+            z-index: 2;
+        }
+
+        header .container {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-logo img {
+            height: 60px;
+            object-fit: contain;
+        }
+
+
+        /* body */
+        .login-background {
+            /* background-color: aquamarine; */
+            width: 100%;
+            height: 850px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .image1 {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .image1 img {
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            object-fit: fill;
+        }
+
+        .login-main {
+            position: relative;
+            width: 850px;
+            height: 700px;
+            background-color: #ffffff;
+            border: 10px solid lightseagreen;
+            top: 80px;
+            z-index: 10;
+            /* left: 525px; */
+
+        }
+
+
+        h1 {
+            width: 400px;
+            height: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            position: relative;
+            left: 220px;
+            top: 30px;
+            /* border: 1px solid; */
+        }
+
+        .z1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            width: 400px;
+            height: 90px;
+            left: 215px;
+            top: 80px;
+            gap: 10px;
+            /* border: 1px solid black; */
+
+
+        }
+
+
+        .btn2 {
+            width: 400px;
+            height: 40px;
+            font-size: 1rem;
+
+        }
+
+        .btn-submit2 {
+            border: 1px solid lightgray;
+            border-radius: 10px;
+        }
+
+        .z4 {
+            position: relative;
+            width: 400px;
+            top: 115px;
+            left: 215px;
+        }
+
+        .btn3 {
+            width: 100%;
+            height: 40px;
+            font-size: 1rem;
+
+        }
+
+        .btn-submit3 {
+
+            background-color: #00d5ffa3;
+            border: 1px solid rgb(255, 255, 255);
+            border-radius: 10px;
+
+        }
+
+        .z6 {
+            width: 100%;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .y2 {
+            width: 160px;
+            display: flex;
+            justify-content: space-around;
+            /* border: 1px solid; */
+        }
+
+        .z6_5 {
+            width: 100%;
+            margin-top: 60px;
+            border: 1px solid black;
+        }
+
+        .z7 {
+            width: 300px;
+            position: relative;
+            left: 265px;
+            display: flex;
+            /* justify-content: center; */
+            flex-wrap: wrap;
+            top: 170px;
+        }
+
+        .z8>.btn4 {
+            width: 300px;
+            height: 40px;
+            font-size: 1rem;
+
+        }
+
+        .z8>.btn-submit4 {
+
+            background-color: #069ebca3;
+            border: 1px solid rgb(255, 255, 255);
+            border-radius: 10px;
+
+        }
+
+        .z9 {
+            margin-top: 20px;
+            display: flex;
+            gap: 30px;
+
+        }
+
+        .z9-btn img {
+            width: 50px;
+            height: 50px;
+        }
+
+        footer.footer {
+            background-color: #001f3f;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .foot-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .foot-links a {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        @media screen and (max-width : 768px) {
+            h1 {
+                left: 180px;
+            }
+
+            .z1 {
+                left: 180px;
+            }
+
+            .z4 {
+                left: 180px;
+            }
+
+            .z7 {
+                left: 220px;
+            }
+        }
+
+        @media screen and (max-width : 768px) {
+            h1 {
+                left: 100px;
+            }
+
+            .z1 {
+                left: 180px;
+            }
+
+            .z4 {
+                left: 180px;
+            }
+
+            .z7 {
+                left: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <header class="header">
+            <div class="container">
+                <div class="login-logo">
+                    <a href="#"><img src="./KakaoTalk_20250717_170402791.png" alt="대구특별시 로고" /></a>
+                </div>
+            </div>
+        </header>
+
+
+        <body>
+            <div class="login-background">
+                <div class="image1">
+                    <!--  -->
+                    <img src="https://cdn.pixabay.com/photo/2016/10/10/11/09/field-1728099_1280.jpg" />
+                    <!--  -->
+                </div>
+                <div class="login-main">
+
+                    <h1>회원 로그인</h1>
+                    <div class="z1">
+                        <div class="z2">
+                            <input class="btn2 btn-submit2" type="text" placeholder="아이디를 입력하세요">
+                        </div>
+                        <div class="z3">
+                            <input class="btn2 btn-submit2" type="password" placeholder="비닐번호를 입력하세요">
+                        </div>
+                    </div>
+                    <div class="z4">
+                        <div class="z5">
+                            <input class="btn3 btn-submit3" type="submit" value="로그인" />
+                        </div>
+                        <div class="z6">
+                            <div class="y1">
+                                <input id="id_save" type="checkbox" />
+                                <label for="id_save">아이디 저장</label>
+                            </div>
+                            <div class="y2">
+                                <label>회원가입</label>
+                                <label>정보찾기</label>
+                            </div>
+                        </div>
+                        <div class="z6_5"></div>
+                    </div>
+
+                    <div class="z7">
+                        <div class="z8">
+                            <input class="btn4 btn-submit4" type="submit" value="간편로그인" />
+                        </div>
+
+                        <div class="z9">
+                            <div class="z9-btn">
+                                <a href="javcascript:void(0)">
+                                    <img src="data:image/png;base64,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"
+                                        alt="카카오톡이미지" />
+                                </a>
+                            </div>
+                            <div class="z9-btn">
+                                <a href="javcascript:void(0)">
+                                    <img src="data:image/jpeg;base64,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"
+                                        alt="네이버이미지" />
+                                </a>
+                            </div>
+                            <div class="z9-btn">
+                                <a href="javcascript:void(0)">
+                                    <img src="https://cdn.digitalasset.works/news/photo/202507/28288_36187_4536.jpg"
+                                        alt="토스이미지" />
+                                </a>
+                            </div>
+                            <div class="z9-btn">
+                                <a href="javcascript:void(0)">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSARf64Om-Eqb_X_JCB6ukBv0WdYPM6pqOA1g&s"
+                                        alt="하나은행이미지" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </body>
+
+
+        <footer class="footer">
+            <div class="container">
+                <div class="foot-links">
+                    <a href="#">개인정보처리방침</a>
+                    <a href="#">이메일무단수집거부</a>
+                    <a href="#">저작권정책</a>
+                    <a href="#">오시는길</a>
+                </div>
+                <div class="copyright">
+                    ⓒ 2025 Daegu Special City. All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

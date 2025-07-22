@@ -8,31 +8,35 @@
     <style>
         * {
             box-sizing: border-box;
-        }
 
-        body {
-            margin: 0;
-            padding: 0;
-        }
+            body{
+                margin: 0;
+                padding: 0;
+                background-color: beige;
+            }
 
-        .layout {
-            width: 1280px;
-            height: 100vh;
-            margin: 0 auto;
-            background-color: white;
-        }
+            .layout {
+                width: 1280px;
+                height: 100vh;
+                margin: 0 auto;
+                background-color: white;
+            }
 
-        .layout-mobile {
-            width: 350px;
-            height: 100vh;
-            margin: 0 auto;
-            background-color: wheat;
-        }
+            .layout-mobile {
+                width: 350px;
+                height: 100vh;
+                margin: 0 auto;
+                background-color: rgb(255, 255, 255);
+            }
 
-        .mode {
-            position: fixed;
-            left: 5px;
-            top: 5px;
+            .mode {
+                position: fixed;
+                left: 5px;
+                top: 5px;
+            }
+
+
+
         }
     </style>
 </head>
@@ -40,15 +44,45 @@
 <body>
 
     <div>
-        <select name="" id="">
-            <option value="">데스크탑</option>
-            <option value="">모바일</option>
+        <select name="" id="" class="mode">
+            <option value="desktop">데스크탑</option>
+            <option value="mobile">모바일</option>
         </select>
     </div>
     <div class="wrapper layout">
 
-
     </div>
+
+    <script>
+        //if(조건식){
+        // 참인경우 실행할 종속 문장
+        // }
+        // else{
+        //     거짓인 경우 실행할 종속문장
+        // } 
+
+        const wrapperEl = document.querySelector('.wrapper')
+        const modeEl = document.querySelector('.mode');
+        modeEl.addEventListener('change', function () {
+            console.log('changed...',);
+            const selectedValue = modeEl.options[modeEl.selectedIndex].Value;
+            console.log(selectedValue);
+            // 만약 selectedValue==desktop 인 경우
+            // 만약 selectedValue==mobile 인 경우
+
+            if (selectedValue == "desktop") {
+                //데스크탑
+                wrapperEl.classList.remove('layout-mobile');
+                wrapperEl.classList.add('layout');
+
+            }
+            else {
+                //모바일
+                wrapperEl.classList.remove('layout');
+                wrapperEl.classList.add('layout-mobile');
+            }
+        })
+    </script>
 </body>
 
 </html>
