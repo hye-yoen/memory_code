@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #arrow {
+            position: relative;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid black;
+            border-left: 2px solid black;
+            transform: rotate(45deg);
+        }
+
+        #text1 {
+            position: relative;
+            left: 20px;
+            bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="leftDiv">
+        <div class="leftInner">
+            <div id="arrow"></div>
+            <div id="text1" onclick="openDiv()">조직도</div>
+        </div>
+        <div id=leftInner2 style="display:none">
+            <div>
+                <b>(1)영업부</b>
+                <b>(2)경영지원</b>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function openDiv() {
+
+            if (document.getElementById('leftInner2').style.display === 'none') {
+                document.getElementById('leftInner2').style.display = 'block'
+                document.getElementById('arrow').style.transform = 'rotate(-135deg)'
+            } else {
+                document.getElementById('leftInner2').style.display = 'none'
+                document.getElementById('arrow').style.transform = 'rotate(45deg)'
+            }
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

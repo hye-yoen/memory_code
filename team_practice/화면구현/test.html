@@ -5,50 +5,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="./basic.css">
+
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Noto Sans KR', sans-serif;
+        .d1 {
+            width: 240px;
+            height: auto;
         }
 
-        body {
-            background-color: #fff;
-            color: #000;
-        }
-
-        .wrapper {
+        .d1>ul {
             width: 100%;
-            max-width: 1920px;
-            margin: 0 auto;
+            height: auto;
         }
 
-        .m1 {
-            background-color: aqua;
-            width: 200px;
-            height: 200px;
+        .d1>li {
+            width: 100%;
+            position: relative;
+            left: 20px;
+            border: 1px solid gray;
+            display: none;
         }
 
-        .m2 {
-            background-color: rgb(32, 48, 42);
-            width: 1000px;
-            height: 1000px;
+        .s1{
+            background-color: blue;
+            color: white;
         }
+
+        .d2>li {display: none;}
+        
     </style>
 </head>
 
 <body>
+
     <div class="wrapper">
-        <div class="main">
-            <div calss="m1">
+        <h1>ㅇㅇㅇㅇ</h1>
 
+        <header>
+            <a href="버튼"></a>
+            <a href="버튼"></a>
+            <a href="버튼"></a>
+            <a href="버튼"></a>
+        </header>
+        <!-- 이거 진심으로 어디에다가 해요?  그래서 따로 만들었어요^^ 늦은 관계로 기능구현만 함 ㅎㅎㅎ(죄송합니다..)-->
+        <!-- 기능구현 먼저! -->
+        <div class="section">
+            <div class="d1">
+
+                <div class="s1">
+                    <a>종합민원실 안내</a>
+                    <div id="arrow"></div>
+                </div>
+                <li>
+                    <a>서브1</a>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+
+                </li>
             </div>
-            <div class="m2">
+            <div class="d2">
 
+                <div class="s2"><a>메인 2</a></div>
+                <li>
+                    <a>서브2</a>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+
+                </li>
             </div>
         </div>
-    </div>
+
+        <!-- <div class="explanation">
+            
+            <img src="" alt="">
+            
+        </div>
+
+        <select class="cal">
+
+        </select>
+
+        <div class="text-box">
+
+            <table border="1px" width="800px" align="content">
+                <tr>
+                    <th style="width: 200px; height: 50px;">d</th>
+                    <th>d</th>
+                </tr>
+            </table>
+            
+        </div>
+
+        <button class="page-button">
+            
+        </button>  -->
+        <script>
+            const s1El = document.querySelector('.s1');
+            s1El.addEventListener('click', () => {
+                
+                s1El.classList.add('s1');
+                s1El.innerHTML =
+                ` 
+               <div class = "s1"><a>종합민원실 안내</a></div>
+                <li>
+                    <a>서브1</a>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+
+                </li>
+                `
+            });
+            s1El.addEventListener('dblclick', (e) => {
+                s1El.innerHTML =
+                    ` 
+               <div class = "s1"><a>종합민원실 안내</a></div>
+             
+                `
+            });
+
+
+
+
+
+        </script>
+
 </body>
 
 </html>
