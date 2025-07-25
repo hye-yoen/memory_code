@@ -43,7 +43,21 @@
 
 
     <script>
-        
+        const btnEls = document.querySelectorAll('.btn');
+        btnEls.forEach((btnEl,idx)=>{
+            console.log(idx,btnEl);
+            
+            //마우스가 버튼 영역안으로 진입했을때
+            btnEl.addEventListener("mouseover",(e)=>{
+                btnEl.classList.add(`btn--style${idx+1}`);
+
+            });
+            
+            //마우스가 버튼 역영밖으로 나갔을때
+            btnEl.addEventListener("mouseleave",(e)=>{
+                btnEl.classList.remove(`btn--style${idx+1}`);
+            });
+        });
     </script>
 </body>
 </html>
