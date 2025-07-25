@@ -25,8 +25,9 @@
             padding: 10px;
             width: 100%;
             height: 43px;
-            
+
         }
+
         p {
             margin: 0;
         }
@@ -93,32 +94,31 @@
     </div>
 
     <script>
-        const toggle = document.querySelectorAll(".comment-tog");
-        toggle.forEach((tog,tog1) =>
+        const toggles = document.querySelectorAll(".comment-tog");
+
+        toggles.forEach(tog => {
             tog.addEventListener("click", function () {
-                const cont = tog.nextElementSibling;
-                const cont2 = tog.firstElementChild;
-                
+                const cont = tog.nextElementSibling;     // 펼쳐질 컨텐츠
+                const cont2 = tog.firstElementChild;     // 내부 텍스트 요소 (메인1,2,3 등)
+
+                // 컨텐츠 show 클래스 토글 (css로 show일 때 보이도록 설정)
                 cont.classList.toggle("show");
-                // console.log(cont.classList.value); // comment show / comment
-                // console.log(value1 =='comment'); // flase / true
-                const value1 = cont.classList.value;
-                if((value1 =='comment')==false){
-                    //comment show
-                    tog.style.backgroundColor="lightgray";
-                    cont2.setAttribute("style"," padding: 0;width:100%; height: 100%; color:blue;");
+
+                // 현재 배경색에 따라 스타일 변경/복원
+                if (tog.style.backgroundColor === "lightgray") {
+                    // 복원: 흰 배경 + 검은 폰트
+                    tog.style.backgroundColor = "white";
+                    cont2.style.color = "black";
+                } else {
+                    // 변경: 회색 배경 + 파란 폰트
+                    tog.style.backgroundColor = "lightgray";
+                    cont2.style.color = "blue";
                 }
-                else{
-                    //comment 
-                    tog.style.backgroundColor="white";
-                    cont2.setAttribute("style"," padding: 0;width:100%; height: 100%; color:black;");
-                    
-                }
-                
-            })
-        );
-        
-    
+            });
+            //아 허무감 느껴져....
+        });
+
+
     </script>
 </body>
 <!--nextElementSibling  : 어떤 요소의 **"바로 다음 형제 요소"**를 가져오는 DOM 속성입니다.  -->
