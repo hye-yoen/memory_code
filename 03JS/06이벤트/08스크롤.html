@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav {
+            height: 80px;
+            border-bottom: 1px solid;
+            background-color: orange;
+            transition: 3s;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        .show {
+            /* 내비보여주기 */
+            height: 80px;
+        }
+
+        .hide {
+            /* 내비 숨기기 */
+            height: 80px;
+        }
+
+        main>section {
+            height: 600px;
+            ;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body style="height: 5000px; width: 8000px; margin: 0; padding: 0;">
+
+    <div class="wrapper">
+        <header>
+            <div class="top-header"></div>
+            <nav></nav>
+        </header>
+        <main>
+            <section></section>
+        </main>
+        <footer></footer>
+    </div>
+
+
+    <script>
+        const navEl = document.querySelector('.wrapper nav');
+        document.addEventListener('scroll', () => {
+            //window.scrollY: 뷰포트를 기준으로 가장위쪽 부분의 세로축 위치
+            console.log("scrollY...", window.scrollY);
+            // console.log("scrollTOP...",document.documentElement.scrollTop);
+            // console.log("scrollHeight...",document.documentElement.scrollHeight);
+
+            //window.scrollX: 뷰포트를 기준으로 가장위쪽 부분의 가로축 위치
+            // console.log("scrollX...",window.scrollX);
+            // console.log("scrollTOP...",document.documentElement.scrollLeft);
+
+            //스크홓 값이 1000이상인 상태에서 스클로을 위로 올렸을때 보여줘
+            //상태값을 담기위한 변수: let scrollState
+            //wondwow.scrolllyY >= 1000px && relllState windoww.scrool)
+            //헤더스타일 변경
+            
+            if (window.screenY >= 1000&& scrollState.window.scrollY) {
+                navEl.classList.remove('hide');
+                navEl.classList.add ( 'show')
+                
+            }else if(window.screenY>=30){
+                navEl.classList.remove('show');
+                navEl.classList.add ( 'hide')
+            }
+             else {
+                navEl.classList.remove('hide');
+                navEl.classList.add('show')
+            }
+
+            scrollState = window.screenY;
+
+
+        });
+
+    </script>
+</body>
+
+</html>

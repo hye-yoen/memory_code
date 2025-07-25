@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .sub1{
+            position: relative;
+        }
+        .sub2 {
+            display: flex;
+            position: absolute;
+            top: 100px;
+            /* 내려가짐 개꿀~~~  */
+            width: 200px;
+            height: 21px;
+            border: 1px solid;
+        }
+        #text1{
+            position: absolute;
+        }
+
+        #arrow1 {
+            position: absolute;
+            top: 6px;
+            left: 180px;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid black;
+            border-left: 2px solid black;
+            transform: rotate(45deg);
+        }
+        .sub4{
+            position: absolute;
+        }
+        .sub5{
+            position: relative;
+        }
+        .sub6 {
+            display: flex;
+            position: absolute;
+            top: 150px;
+            /* 내려가짐 개꿀~~~  */
+            width: 200px;
+            height: 21px;
+            border: 1px solid;
+        }
+        #text2{
+            position: absolute;
+        }
+
+        #arrow2 {
+            position: absolute;
+            top: 6px;
+            left: 180px;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid black;
+            border-left: 2px solid black;
+           
+            transform: rotate(45deg);
+        }
+      
+    </style>
+</head>
+
+<body>
+    <div class="sub1">
+        <div class="sub2">
+            <!-- <div id="text1" onclick="openDiv()">조직도</div> -->
+            <div id="text1" onclick="openDiv()">조직도</div>
+            <div id="arrow1"></div>
+        </div>
+        <div id="sub4"style="display:none">
+            <div>
+                <li>(1)영업부</li>
+                <li>(2)경영지원</li>
+            </div>
+        </div>
+    </div>
+    <div class="sub5">
+        <div class="sub6">
+            <!-- <div id="text1" onclick="openDiv()">조직도</div> -->
+            <div id="text2" onclick="openDiv2()" >조직도2</div>
+            <div id="arrow2"></div>
+        </div>
+        <div id="sub8"style="display:none">
+            <div>
+                <b>(1)영업부2</b>
+                <b>(2)경영지원2</b>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+    
+        function openDiv() {
+
+            if (document.getElementById('sub4').style.display === 'none') {
+                document.getElementById('sub4').style.display = 'block'
+                document.getElementById('arrow1').style.transform = 'rotate(-135deg)'
+                document.getElementById('sub4').className='sub4';
+            } else {
+                document.getElementById('sub4').style.display = 'none'
+                document.getElementById('arrow1').style.transform = 'rotate(45deg)'
+            }
+        }
+      
+    
+        function openDiv2() {
+
+            if (document.getElementById('sub8').style.display === 'none') {
+                document.getElementById('sub8').style.display = 'block'
+                document.getElementById('arrow2').style.transform = 'rotate(-135deg)'
+            } else {
+                document.getElementById('sub8').style.display = 'none'
+                document.getElementById('arrow2').style.transform = 'rotate(45deg)'
+            }
+        }
+      
+
+
+    </script>
+
+
+</body>
+
+</html>

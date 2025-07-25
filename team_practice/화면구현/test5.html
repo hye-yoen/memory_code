@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .main{
+            /* padding: 60px; */
+            /* margin: 60px; */
+            position: relative;
+            width: 240px;
+            height: 500px;
+            left: 60px;
+            top: 60px;
+        }
+        .comment-tog{
+            border: 1px solid;
+            padding: 10px;
+        }
+        .comment {
+            display: none;
+            list-style: '-';
+            padding-left: 20px;
+
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <section>
+            <div class="comment-tog">아침</div>
+            <ul class="comment">
+                <li>간장계란장</li>
+                <li>참기름</li>
+                <li>밥</li>
+            </ul>
+        </section>
+        <section>
+            <div class="comment-tog">점심</div>
+            <ul class="comment">
+                <li>시금치스무디</li>
+                <li>로제떡볶이</li>
+            </ul>
+        </section>
+        <section>
+            <div class="comment-tog">저녁</div>
+            <ul class="comment">
+                <li>리조또</li>
+                <li>김치</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        const toggle = document.querySelectorAll(".comment-tog");
+        toggle.forEach((tog) =>
+            tog.addEventListener("click", function () {
+                const cont = tog.nextElementSibling;
+                cont.classList.toggle("show");
+            })
+           
+        );
+    </script>
+</body>
+<!--nextElementSibling  : 어떤 요소의 **"바로 다음 형제 요소"**를 가져오는 DOM 속성입니다.  -->
+<!-- https://sanghee01.tistory.com/9 -->
+</html>

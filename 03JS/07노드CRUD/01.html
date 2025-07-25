@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1_LIST</li>
+        <li id="li2">2_LIST</li>
+        <li class="item">3_LIST</li>
+        <li>4_LIST</li>
+        <li id="li5">5_LIST</li>
+        <li>6_LIST</li>
+        <li class="item">7_LIST</li>
+        <li class="item">8_LIST</li>
+    </ul>
+
+    <script>
+        //노드탐색
+        //id
+        const li2El = document.getElementById('li2');
+        li2El.style.fontSize='24px'; //style , dash'-' 안됨 
+        li2El.setAttribute("style","color:red;background-color:black");
+        //setAttribute <- 더 광범위하게 사용
+        //selector
+        const li2El_2 = document.querySelector('#li2');
+        li2El_2.style.width='200px';
+
+        const itemEl = document.querySelector('.item'); //querySelector하나만 검색
+        itemEl.style.color='green';
+        itemEl.style.fontSize='2rem';
+
+        const itemEls = document.querySelectorAll('.item'); //querySelectorAll여러개 검색
+        console.log(itemEls);
+        itemEls.forEach((el)=>{
+            el.style.fontWight="900";
+            el.style.backgroundColor="orange"
+        });
+        
+        //tagName
+        let liEls = document.getElementsByTagName('li');
+        console.log(liEls); //유사배열 -> 배열처럼 순서붙임 , but! 배열함수 사용불가(사용제한)
+        // !!! Array.from(유사배열) : 유사배열 -> 배열변환 !!!
+        liEls = Array.from(liEls);
+         console.log(liEls);
+        liEls.forEach((el)=>{
+            el.style.fontSize="4rem";
+            el.style.color="blue";
+        })
+    </script>
+
+
+
+</body>
+</html>

@@ -7,10 +7,7 @@
     <title>Document</title>
 
     <style>
-        .leftInner{
-            display: flex;
-        }
-        .arrow {
+        #arrow {
             position: relative;
             top: 10px;
             width: 10px;
@@ -20,7 +17,7 @@
             transform: rotate(45deg);
         }
 
-        .text1 {
+        #text1 {
             position: relative;
             left: 20px;
             bottom: 10px;
@@ -31,10 +28,8 @@
 <body>
     <div class="leftDiv">
         <div class="leftInner">
-            <div id="text1" onclick="openDiv()">
-                <label>조직도</label>
-                <div id="arrow"></div>
-            </div>
+            <div id="arrow"></div>
+            <div id="text1" onclick="openDiv()">조직도</div>
         </div>
         <div id=leftInner2 style="display:none">
             <div>
@@ -57,7 +52,12 @@
             }
         }
 
+  /*  const toggleButton = document.getElementById('toggleButton');
+            const toggleDiv = document.getElementById('toggleDiv');
 
+            toggleButton.addEventListener('click', function() {
+            toggleDiv.classList.toggle('hidden');
+            });*/
 
     </script>
 
