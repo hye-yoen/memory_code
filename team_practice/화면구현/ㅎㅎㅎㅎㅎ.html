@@ -150,16 +150,27 @@
             border-radius: 2px;
             display: flex;
             justify-content: center;
-            align-items:center ;
+            align-items: center;
             font-size: 12px;
         }
 
-        .t1btn:nth-child(2) {font-size: 15px;}
-        .t1btn:nth-child(3) {font-size: 15px;}
-        .t1btn:nth-child(4) {font-weight: 600;}
-        .t1btn:nth-child(5) {font-weight: 200;}
+        .t1btn:nth-child(2) {
+            font-size: 15px;
+        }
 
-        .t1btnimg{
+        .t1btn:nth-child(3) {
+            font-size: 15px;
+        }
+
+        .t1btn:nth-child(4) {
+            font-weight: 600;
+        }
+
+        .t1btn:nth-child(5) {
+            font-weight: 200;
+        }
+
+        .t1btnimg {
             width: 100%;
             height: 100%;
         }
@@ -504,23 +515,23 @@
                         <button class="t1btn">가</button>
                         <button class="t1btn">가</button>
                         <button class="t1btn">
-                            <img  class="t1btnimg" src="./점자블록 보기.png" alt="점자블록"/>
+                            <img class="t1btnimg" src="./점자블록 보기.png" alt="점자블록" />
                         </button>
                         <button class="t1btn t1btnimg">
-                            <img  class="t1btnimg" src="./점자블록다운로드.png" alt="점자다운로드" />
+                            <img class="t1btnimg" src="./점자블록다운로드.png" alt="점자다운로드" />
                         </button>
                         <button class="t1btn t1btnimg">
-                            <img  class="t1btnimg" src="./페이스북.png" alt="페이스북" />
+                            <img class="t1btnimg" src="./페이스북.png" alt="페이스북" />
                         </button>
                         <button class="t1btn t1btnimg">
-                            <img  class="t1btnimg" src="./x.png" alt="x" />
+                            <img class="t1btnimg" src="./x.png" alt="x" />
                         </button>
                         <button class="t1btn t1btnimg">
-                            <img  class="t1btnimg" src="./카카오톡.png" alt="카카오톡" />
+                            <img class="t1btnimg" src="./카카오톡.png" alt="카카오톡" />
                         </button>
                         <button class="t1btn t1btnimg">
-                            <img  class="t1btnimg" src="./네이버블로그.png" alt="네이버 블로그" />
-                        </button>                        
+                            <img class="t1btnimg" src="./네이버블로그.png" alt="네이버 블로그" />
+                        </button>
                     </div>
                 </div>
 
@@ -706,19 +717,44 @@
     <script>
 
         const toggle = document.querySelectorAll(".comment-tog");
-        toggle.forEach((tog, tog1) =>
+        toggle.forEach((tog) =>
             tog.addEventListener("click", function () {
-                const cont = tog.nextElementSibling;
+                const cont = tog.nextElementSibling; //내가 클릭한 것의 형재 == comment
                 const cont2 = tog.firstElementChild;
 
                 cont.classList.toggle("show");
+
                 // console.log(cont.classList.value); // comment show / comment
                 // console.log(value1 =='comment'); // flase / true
+
                 const value1 = cont.classList.value;
+
+
                 if ((value1 == 'comment') == false) {
                     //comment show
                     tog.style.backgroundColor = "#4174b9";
                     cont2.setAttribute("style", " padding: 0;width:100%; height: 100%; color:white;");
+
+                    // 추가 테스트
+
+                    if (cont.classList.contains("show")) { //전 comment가 열려있다면 
+                        const cont3 = document.querySelectorAll(".comment")  
+                        cont3.forEach(c => {
+                            if (c !== cont) {       //comment ==  전comment
+                                c.classList.remove("show"); //comment 닫힘
+
+                                const othertog = c.previousElementSibling;  //닫힌comment의 윗 형재 변수 지정 
+                                if (othertog) {
+                                    othertog.style.backgroundColor = "white";
+                                    if (othertog.firstElementChild) {
+                                        othertog.firstElementChild.setAttribute("style","padding: 0; width:100%; height: 100%; color:black;"
+                                        );
+                                    }
+                                }
+                            }
+                        });
+                    }
+                    // 테스트 끝
                 }
                 else {
                     //comment 
