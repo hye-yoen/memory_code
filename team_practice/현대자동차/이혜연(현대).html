@@ -16,14 +16,18 @@
         body {
             background-color: white;
             color: black;
+            width: 1920px;
+
         }
 
+        /* 배너 */
         section:nth-child(1) {
-            border: 1px solid;
-            width: 1920px;
+            /* border: 1px solid; */
+            width: 100%;
             height: 500px;
             background-image: url("https://www.hyundai.com/content/dam/hyundai/kr/ko/images/brand/brandstory/brand-philosophy-2024-kv-w.jpg");
-            background-size: 1920px 500px;
+            background-size: 1920px 700px;
+            position: relative;
 
         }
 
@@ -34,8 +38,10 @@
             display: flex;
             flex-direction: column;
             align-items: start;
+            justify-content: center;
             gap: 40px;
-            margin: 150px;
+            position: absolute;
+            left: 200px;
         }
 
         section:nth-child(1)>.a1>.name:nth-child(1) {
@@ -48,29 +54,71 @@
             font-weight: 200;
         }
 
-
+        /* 내용 시작 */
         .a2 {
             width: 100%;
             height: 300px;
+            margin: 70px;
             display: flex;
+            gap: 10px;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
         }
 
         .a2>h2 {
             margin-bottom: 15px;
         }
 
+        /*함께 나아가는 미래 블라블라 */
         section:nth-child(3) {
             display: flex;
-            align-items:start;
-            gap: 30px;
-            /* justify-content: center; *//*이거 왜 안됨?*/
-            margin: 0 150px;
+            align-items: start;
+            margin: 0 110px;
+            gap: 50px;
+
         }
-        section:nth-child(3)>.a3>h2{
+
+        section:nth-child(3)>.a3>h2 {
+            margin-bottom: 30px;
+        }
+
+        .mainsection3 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 100px;
+        }
+
+        .mainsection4 {
+            width: 100%;
+            height: 450px;
+            background-color: aliceblue;
+            padding: 70px 100px;
+        }
+        .a4_1, .a4_3{
+            width: 100%;
+            height: 50px;
+            font-size: 100px;
+            color: rgb(204, 207, 209);
+            font-family:Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+        .a4_1{margin-top: 30px;}
+        .a4_3{margin-bottom: 30px;}
+        .a4_2{
+            margin-top: 20px ;
+            margin-bottom: 20px ;
+            font-size: 16px;
+            font-weight: 200;
+        }
+        .a4_2>h2{
+            display: flex;
+            justify-content: center;
+        }
+        .a4_2>h2:nth-child(1){
             margin-bottom: 30px;
         }
     </style>
@@ -119,12 +167,13 @@
                 </div>
             </section>
 
-            <section>
+            <section class="mainsection3">
                 <h1>우리의 비전</h1>
                 <h1>휴머니티를 향한 진보</h1>
             </section>
-            <section>
-                <div class="a4">
+            <section class="mainsection4">
+                <div class="a4_1">"</div>
+                <div class="a4_2">
                     <h2>우리는 인류를 위해 옳은 일을 하고자 존재합니다.</h2>
                     <h2>
                         진정한 진보는 인류에 대한 깊은 공감을 바탕으로 이루어 집니다.
@@ -132,9 +181,11 @@
                     </h2>
                     <h2>우리는 인류가 더 나은 방향으로 나아가도록 기여하기 위해 존재합니다.</h2>
                 </div>
+                <div class="a4_3">"</div>
             </section>
-            <!-- 내용 임시 끝! -->
-            <section></section>
+            <section>
+
+            </section>
             <section></section>
             <section></section>
         </main>
