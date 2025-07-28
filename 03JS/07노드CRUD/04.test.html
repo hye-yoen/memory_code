@@ -5,20 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- 구글icon 링크 -->
+    <!-- GOOGLE ICON  -->
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=delete" />
-    <!-- 구글icon style -->
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=delete" />
     <style>
         .material-symbols-outlined {
             font-variation-settings:
                 'FILL' 0,
-                'wght' 400,
+                'wght' 300,
                 'GRAD' 0,
                 'opsz' 24
         }
     </style>
-
 
     <style>
         .item {
@@ -36,7 +34,6 @@
         }
 
         .item>.left>input {
-
             width: 100%;
             outline: none;
             border: 0;
@@ -46,17 +43,21 @@
             position: absolute;
             left: 0;
             top: 0;
-
         }
 
         .item>.right {
             border: 1px solid;
+            
+        }
+        .item>.right>a{
+            cursor:pointer;
         }
     </style>
 </head>
 
 <body>
-    <input class="insert-value" type="text"> <a href="javascript:void(0)" class="btn btn-insert">입력</a>
+
+    <input class="insert-value" type="text"> | <a href="javascript:void(0)" class="btn btn-insert">입력</a>
     <hr />
     <div class="container">
         <!-- <div class="item">
@@ -73,15 +74,25 @@
         </div> -->
     </div>
 
+
     <script>
-        window.addEventListener('DOMContentLoaded', () => {
+        window.addEventListener('DOMContentLoaded',()=>{
             //전역스코프 요소검색
             const insertEl = document.querySelector('.insert-value');
             const insertBtnEl = document.querySelector('.btn-insert');
             const containerEl = document.querySelector('.container');
 
             //이벤트 처리 등록
-            insertBtnEl.addEventListener('click', () => {
+            insertBtnEl.addEventListener('click',()=>{ //입력 버튼 클릭 후 text 생성 후 초기화
+                const text = insertEl.value;
+                if (!isValid(text)) {
+                    return;  //함수 나감? 
+                }
+                //container에 item 추가
+                createNode(text);
+                insertEl.value = "";
+            })
+            insertEl.addEventListener('keydown', (e) => { //엔터키 누른 후 text 생성 후 초기화
                 const text = insertEl.value;
                 if (!isValid(text)) {
                     return;  //함수 나감? 
@@ -90,22 +101,12 @@
                 createNode(text);
                 insertEl.vlaue = "";
             });
-            insertEl.addEventListener('keydown', (e) => { //엔터키?
-                const text = insertEl.value;
-                if (!isValid(text)) {
-                    return;  //함수 나감? 
-                }
-                //container에 item추가
-                createNode(text);
-                insertEl.vlaue = "";
-            });
 
-            //노트추가 함수 생성(Hosting 적용)
-            function createNode(text) {
-                //유효성 체크 - ! 
+            //노드추가 함수 생성(Hosting 적용)
+            function createNode(text){ //text 생성 했을때 
+                //유효성 체크 - !
 
-
-                //새노드 생성
+                //새노드 생성           //
                 const itemEl = document.createElement('div');
                 const leftEl = document.createElement('div');
                 const inputEl = document.createElement('input');
@@ -115,20 +116,19 @@
                 const spanEl = document.createElement('span');
 
                 //클래스 적용
-                itemEl.className = 'item';
-                leftEl.className = 'left';
-                rightEl.className = 'right';
-                spanEl.className = 'material-symbols-outlined';
-
-                //속성추가
-                inputEl.setAttribute('readonly', true);
-                aEl.setAttribute('herf', 'javascript:void(0)');
+                itemEl.className='item';
+                leftEl.className='left';
+                rightEl.className='right';
+                spanEl.className='material-symbols-outlined';
+                
+                //속성 추가
+                inputEl.setAttribute('readonly',true) 
 
                 //데이터 삽입
-                spanEl.innerHTML = 'delete';
-                inputEl.value = text;
+                spanEl.innerHTML='delete';
+                inputEl.value=text;
 
-                //이벤트 추가
+                 //이벤트 추가
                 aEl.addEventListener('click', (e) => {
                     const itemEl = e.target.parentNode.parentNode.parentNode;
                     // console.log(e.target.parentNode.parentNode.parentNode);
@@ -144,6 +144,7 @@
                 itemEl.appendChild(rightEl)
                 containerEl.appendChild(itemEl);
             }
+
             //유효성 검증 함수
             function isValid(text) {
                 const regex = /^[0-9]/;            //정규표현식
@@ -159,11 +160,8 @@
 
                 return true;
             }
-
         })
-    
     </script>
-
 </body>
 
 </html>
