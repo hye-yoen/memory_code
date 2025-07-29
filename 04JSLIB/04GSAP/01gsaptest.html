@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- gsap cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        .box{ margin: 20px; width: 100px; height: 100px;}
+        .box1{background-color: orange;}
+        .box2{background-color: greenyellow;}
+        .box3{background-color: tomato;}
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3">box</div>
+    
+    <script>
+        console.log(gsap); //이걸로 함수 살펴보삼..^^;;;;
+        gsap.to('.box1',{
+            duaration:3, x: 200 ,y:200,opacity:0.2, ease:'steps(10)',delay:2,
+            // 기간, x,y축 이동, 투명도,ease->걍 슬라이드 쇼 속성 아닌가?ㅋㅋㅋ
+        })
+        gsap.to('.box2',{
+            duaration:3, x: 200 ,rotate:720,scale:1.3,delay:3})
+        gsap.to('.box3',{
+            duaration:3, x: 200 ,ease:'elastic',backgoundColor:'red',width:300,fontSize:60,delay:5})
+    </script>
+</body>
+</html>
