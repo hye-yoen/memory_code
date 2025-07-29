@@ -1,0 +1,73 @@
+<!-- 울기 가능? -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./범죄발생율.js"></script>
+</head>
+
+<body>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+    
+    <!-- 데이터 뽑기요 -->
+    <script>
+        
+        // console.log(지역별범죄건수);
+        //item당 범뵈대분류, 범죄수분류를 제외한 값을 filter
+        const result = 
+        지역별범죄건수.reduce((resultObject,item)=>{
+            const {범죄대분류,범죄중분류,...rest} = item;
+            //구조분해 할당:  아이템(객체)의 구조들을 왼쪽에 적힌 것을 객체를 따로 빼는 것이가능
+            // => 객체 띠러 분류 가능
+            const values = Object.values(rest);
+            const item_sum = values.reduce((sum,count)=>{return sum+count;},0);
+
+            // console.log(범죄대분류,rest);
+            // return {범죄대분류,rest};
+            if(resultObject[범죄대분류] == undefined){
+                resultObject[범죄대분류]+=item_sum;
+            }
+            else{
+                //처음누적
+                resultObject[범죄대분류]=item_sum;
+            }
+            return resultObject
+        },{})
+  
+        console.log(result);
+        
+    </script>
+    
+    <!-- 표요 -->
+    <script>
+        // const ctx = document.getElementById('myChart');
+
+        // new Chart(ctx, {
+        //     type: 'line',
+        //     data: {
+        //         labels: Object.keys(cat_count),
+        //         datasets: [{
+        //             label: 'COUNT',
+        //             data: Object.values(cat_count),
+        //             borderWidth: 1
+        //         }]
+        //     },
+        //     options: {
+        //         scales: {
+        //             y: {
+        //                 beginAtZero: true
+        //             }
+        //         }
+        //     }
+        // });
+    </script>
+
+</body>
+
+</html>

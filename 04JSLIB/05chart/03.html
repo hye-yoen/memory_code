@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Chartjs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./중구맛집.js"></script>
+</head>
+
+<body style="display:flex;justify-content: center;align-items: center;height:100vh;">
+
+    <div style="width:800px;height:500px;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        // 
+        console.log("ALL DATA", 중구맛집);
+        //
+        const datas = 중구맛집.data;
+        console.log("datas", datas);
+
+        //한식맛집만 필터링 console.log
+        const 한식맛집Datas = datas.filter((item) => { return item.FD_CS == '한식' });
+        console.log("한식맛집", 한식맛집Datas);
+
+        //일식 필터링 -> 상호명(BZ_NM),메뉴(MNU),주소(GNG_CS)만 추출해서 새로운 배열로 재구성(map)
+        const 일식맛집Datas = datas.filter((item) => { return item.FD_CS == '일식' })
+            .map((item) => {
+                item = { "BZ_NM": item.BZ_NM, "MNU": item.MNU, "GNG_CS": item.GNG_CS }
+                return item;
+            });
+        console.log("일식맛집", 일식맛집Datas);
+        
+        // 이멘에는 여기서 부터
+        //카테괼별 맛집 count
+        const cat_count = datas.map((item) => { return item.FD_CS })
+            .reduce((cat, item) => {
+                if (cat[item] !== undefined) //데이더 있다면
+                    cat[item]++;
+                else
+                    cat[item] = 0;
+                return cat;
+            }, {}) //{중식:100, 일식: 55}
+
+        console.log(cat_count);
+
+
+    </script>
+    <script>
+
+        const ctx = document.getElementById('myChart');
+
+        const dataSet = [
+            {
+                label: 'red',
+                data: [54, 0, 0, 0, 0, 0],
+                borderWidth: 1,
+                backgroundColor: 'red',
+                borderColor: '',
+            },
+            {
+                label: 'orange',
+                data: [0, 45, 0, 0, 0, 0],
+                borderWidth: 1,
+                backgroundColor: 'orange',
+                borderColor: '',
+            },
+            {
+                label: 'yellow',
+                data: [0, 0, 23, 0, 0, 0],
+                borderWidth: 1,
+                backgroundColor: 'yellow',
+                borderColor: '',
+            },
+            {
+                label: 'green',
+                data: [0, 0, 0, 70, 0, 0],
+                borderWidth: 1,
+                backgroundColor: 'green',
+                borderColor: '',
+            },
+            {
+                label: 'blue',
+                data: [0, 0, 0, 0, 12, 0],
+                borderWidth: 1,
+                backgroundColor: 'blue',
+                borderColor: '',
+            },
+            {
+                label: 'navy',
+                data: [0, 0, 0, 0, 0, 45],
+                borderWidth: 1,
+                backgroundColor: 'navy',
+                borderColor: '',
+                // barPercentage:12,
+            }
+        ]
+        const option = {
+            // //line에 적용
+            // animation: {
+            //     duration: 1000,
+            //     easing: 'linear',
+            //     from: 1,
+            //     to: 0,
+            //     loop: true,
+            // },
+
+            //bar에 적용
+            animation: {
+                delay: (el) => { return el.dataIndex * 100 },
+            },
+
+            scales: {
+                x: {
+                    stacked: true,
+                    // barPercentage:0.5,
+                },
+                y: {
+                    beginAtZero: true,
+                    // max:100,
+                    // min:0,
+                    // ticks:{
+                    //     stepSize:10
+                    // }
+                },
+            },
+
+            onClick: (event, chartEl) => {
+                // console.log(event);
+                console.log(chartEl);
+            },
+        }
+
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: Object.keys(cat_count),
+                datasets: [{
+                    label: 'COUNT',
+                    data: Object.values(cat_count),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
