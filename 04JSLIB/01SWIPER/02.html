@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 구글 아이콘 붙여넣기 -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24;
+
+            font-size: 3rem;
+            border: 5px solid;
+            border-radius: 50%;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {}
+
+        .wrapper>header {
+            min-height: 80px;
+            background-color: white;
+        }
+
+        .wrapper>header>.top-header {
+            height: 30px;
+        }
+
+        .wrapper>header>.top-header>.swiper {
+            height: 100%;
+            background-color: bisque;
+
+        }
+
+        .wrapper>header>.top-header>.swiper>.swiper-wrapper {}
+
+        .wrapper>header>.top-header>.swiper>.swiper-wrapper>.swiper-slide {}
+
+        .wrapper>header>.top-header>.swiper>.swiper-wrapper>.swiper-slide>a {}
+
+
+
+
+        /* 메인 */
+        .wrapper>main {}
+
+        .wrapper>main>section {}
+
+        .wrapper>main>section.banner>.swiper {
+            min-height: 720px;
+            position: relative;
+        }
+
+        .wrapper>main>section.banner>.swiper>.swiper-wrapper {
+            height: 100%;
+        }
+
+        .wrapper>main>section.banner>.swiper>.swiper-wrapper>.swiper-slide {
+            height: 100%;
+        }
+
+        /* bullets일때 */
+        .wrapper>main>section.banner>.swiper .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            border-radius: 0;
+            transition: .3s;
+        }
+
+        .wrapper>main>section.banner>.swiper .swiper-pagination-bullet-active {
+            background-color: white;
+        }
+
+        /* fraction */
+        .wrapper>main>section.banner>.swiper .swiper-pagination {
+            color: white;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 15.625vw;
+            top: 80%;
+            width: 300px;
+            letter-spacing: 3px;
+        }
+
+        .wrapper>main>section.banner>.swiper .swiper-pagination-current {
+            color: rgb(196, 225, 65);
+        }
+
+
+        .wrapper>main>section.banner>.swiper .swiper-pagination-total {}
+
+        /* 화살표 */
+        .wrapper>main>section.banner>.swiper .swiper-button-prev,
+        .wrapper>main>section.banner>.swiper .swiper-button-next {
+            width: 50px;
+            height: 50px;
+            /* border: 1px solid white; */
+            border-radius: 50px;
+            position: absolute;
+            top: 82%;
+        }
+
+        .wrapper>main>section.banner>.swiper .swiper-button-prev {
+            left: calc(15.625vw + 65px);
+        }
+
+        .wrapper>main>section.banner>.swiper .swiper-button-next {
+            left: calc(15.625vw + 180px);
+        }
+
+        .wrapper>main>section.banner>.swiper .swiper-button-prev::after,
+        .wrapper>main>section.banner>.swiper .swiper-button-next::after {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: white;
+        }
+
+        .wrapper>main>section.banner>.swiper .start-stop-toggle {
+            position: absolute;
+            top: 78.4%;
+            z-index: 100;
+            left: calc(15.625vw + 10px);
+            color: white;
+            cursor: pointer;
+            /* mouse */
+        }
+
+
+        .wrapper>main>section.banner>.swiper>.swiper-wrapper>.swiper-slide>a {}
+
+        .wrapper>main>section.banner>.swiper>.swiper-wrapper>.swiper-slide>a>img {}
+
+        /* Multi slider */
+        .wrapper>main>section.multi-slider {
+            border: 1px solid;
+            min-height: 500px;
+        }
+
+        .wrapper>main>section.multi-slider>.swiper {
+            height: 500px;
+        }
+
+        .wrapper>main>section.multi-slider>.swiper>.swiper-wrapper {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .wrapper>main>section.multi-slider>.swiper>.swiper-wrapper>.swiper-slide {
+            width: 250px;
+            height: 250px;
+            border: 1px solid;
+            transition: 0.3s;
+        }
+
+        .wrapper>main>section.multi-slider>.swiper>.swiper-wrapper>.swiper-slide>a {}
+
+        .wrapper>main>section.multi-slider>.swiper>.swiper-wrapper>.swiper-slide>a>img {}
+
+        .wrapper>main>section.multi-slider .swiper-slide-prev{
+            background-color: rgb(255, 0, 0);
+            transform: scale(1.2);
+            z-index: 1;
+        }
+       .wrapper>main>section.multi-slider .swiper-slide-active{
+            background-color: orange;
+            transform: scale(1.5);
+            z-index: 2;
+        }
+        .wrapper>main>section.multi-slider .swiper-slide-next{
+            background-color: rgb(255, 230, 0);
+            transform: scale(1.2);
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="top-header">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide"><a href="javascript:void(0)">1. 오늘따라 버틸 수 있을까?</a></div>
+                        <div class="swiper-slide"><a href="javascript:void(0)">2. 쉬는시간에 자야 하는거 아님?</a></div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)">3. 노트북을 들고 오긴 했는데...</a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)">4. 아.. 맏기기 싫타....</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav></nav>
+        </header>
+        <main>
+            <section class="banner">
+
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)">
+                                <img src="./images/1.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)">
+                                <img src="./images/2.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)">
+                                <img src="./images/3.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)">
+                                <img src="./images/4.jpg" alt="">
+                            </a>
+                        </div>
+
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+                    <!-- stop/start button -->
+                    <div class="start-stop-toggle">
+                        <span class="material-symbols-outlined">
+                            <!-- pause -->
+                            play_arrow
+                        </span>
+                    </div>
+
+
+
+                    <!-- If we need scrollbar -->
+                    <!-- <div class="swiper-scrollbar"></div> -->
+                </div>
+
+            </section>
+
+            <!-- Multislider -->
+            <section class="multi-slider">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)"><img src="" alt="이번 쉬는 시간에 자고 만다."></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)"><img src="" alt="잠2"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)"><img src="" alt="잠3"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)"><img src="" alt="잠4"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)"><img src="" alt="잠5"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)"><img src="" alt="잠6"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)"><img src="" alt="잠7"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)"><img src="" alt="잠8"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)"><img src="" alt="잠9"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="javascript:void(0)"><img src="" alt="잠10"></a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+
+                </div>
+
+            </section>
+        </main>
+        <footer></footer>
+    </div>
+
+    <script>
+        const swiperBanner = new Swiper('.wrapper>main>section.banner>.swiper', {
+            // Optional parameters
+            direction: 'horizontal',  //horizontal(수평 slide) ,vertical(수직 slide)
+            autoplay: {  // 스크롤 반복 이동
+                delay: 2000,
+                // pauseOnMouseEnter: true,  //마우스 갖다대면 멈추기
+            },
+
+            loop: true,  // 스크롤 반복 이동 ture
+            effect: "coverflow", //slide (기본),fade,scroll,cube,coverflow,flip
+            mousewheel: true, //마우스 휠로 움직임
+
+
+
+            // If we need pagination
+            pagination: {
+                el: '.wrapper>main>section.banner>.swiper .swiper-pagination', //이미지 순서 하단에 동그랗게 보이기 //구조(wrapper) x ->그냥
+                clickable: true, //동그라미 클릭 -> 해당 순서 이미지 이동
+                type: 'fraction', //bullets(기본),fraction(숫자),progressbar
+            },
+
+            // Navigation arrows
+            navigation: {      //슬라이드 화살표 버튼
+                nextEl: '.wrapper>main>section.banner>.swiper .swiper-button-next',
+                prevEl: '.wrapper>main>section.banner>.swiper .swiper-button-prev',
+            },
+
+            // // And if we need scrollbar // scrollbar ^^
+            // scrollbar: {
+            //     el: '.swiper-scrollbar',
+            // },
+
+        })
+
+        //토글버튼
+        const playPauseBtn = document.querySelector('.start-stop-toggle span'); //171row
+        let isPlaying = true;
+        playPauseBtn.addEventListener('click', () => {
+            if (isPlaying) {
+                playPauseBtn.innerHTML = 'pause'; // 172row ==paudr
+                swiperBanner.autoplay.stop(); //192row: stop
+                isPlaying = false;
+            }
+            else {
+                playPauseBtn.innerHTML = 'play_arrow';
+                swiperBanner.autoplay.stop();
+                isPlaying = true;
+            }
+
+        });
+
+        // 공지사항 Swiper (heaader)
+        const noticeSwiper = new Swiper('.top-header .swiper', {
+            // Optional parameters
+            direction: 'vertical',
+            autoplay: {
+                delay: 2000,
+            },
+            loop: true,
+            mousewheel: true,
+
+        });
+
+        // Multi slider
+        const swiper = new Swiper('.multi-slider .swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            autoplay:{
+                delay:2000,
+            },
+            loop: true,
+
+            //multislider
+            slidesPerView: 4,  // 슬라이드 보여지는 선의 수(4) + 1 => 슬라이드 수 (5)
+            centeredSlides : true, //슬라이드 중앙 배치
+            // spaceBetween:20,  //슬라이드 사이 간격
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.multi-slider .swiper-button-next',
+                prevEl: '.multi-slider .swiper-button-prev',
+            },
+
+        });
+
+
+    </script>
+</body>
+
+</html>

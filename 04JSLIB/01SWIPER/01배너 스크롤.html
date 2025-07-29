@@ -221,11 +221,11 @@
         })
 
         //토글버튼
-        const playPauseBtn = document.querySelector('.start-stop-toggle span');
+        const playPauseBtn = document.querySelector('.start-stop-toggle span'); //171row
         let isPlaying = true;
         playPauseBtn.addEventListener('click',()=>{
             if(isPlaying){
-                playPauseBtn.innerHTML='pause';
+                playPauseBtn.innerHTML='pause'; // 172row ==paudr
                 swiperBanner.autoplay.stop(); //192row: stop
                 isPlaying = false;
             }
