@@ -1,0 +1,30 @@
+:root{font-size: 16px;}
+
+*{box-sizing: border-box; }
+ul{list-style: none; padding: 0; margin: 0;}
+body{padding: 0;margin: 0;}
+a{text-decoration: none; color: black;}
+
+.wrapper{}
+.wrapper>header{}
+.wrapper>header>.top-header{}
+.wrapper>header>nav{}
+
+.wrapper>main{}
+.wrapper>main>section{}
+
+.wrapper>main>section.banner-block .carousel-control-prev,
+.wrapper>main>section.banner-block .carousel-control-next{
+    border: 5px solid rgb(255, 255, 255);
+    font-size: 2rem !important;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon{
+    width: 48px;
+    height: 48px;
+    background-color: rgb(44, 124, 124);
+    border-radius: 50%;
+}
+
+.wrapper>footer{}

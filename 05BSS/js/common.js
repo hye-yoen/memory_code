@@ -1,0 +1,1 @@
+window.addEventListener('DOMContentLoaded',()=>{})  //문서 생성 이후 콘덴츠 넣기?
