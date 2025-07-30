@@ -27,4 +27,23 @@ a{text-decoration: none; color: black;}
     border-radius: 50%;
 }
 
+.card-block{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:15px;
+
+    /*  */
+    place-items: center;
+    padding : 50px 0;
+}
+
+/* .wapper>main>section.card-block{
+    border : 5px solid red;
+} */
+
+
+.wrapper>main>section.navtab-block .tab-content{
+    min-height : 300px;
+}
+
 .wrapper>footer{}
