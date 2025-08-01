@@ -46,26 +46,26 @@
     
     <!-- 표요 -->
     <script>
-        // const ctx = document.getElementById('myChart');
+        const ctx = document.getElementById('myChart');
 
-        // new Chart(ctx, {
-        //     type: 'line',
-        //     data: {
-        //         labels: Object.keys(cat_count),
-        //         datasets: [{
-        //             label: 'COUNT',
-        //             data: Object.values(cat_count),
-        //             borderWidth: 1
-        //         }]
-        //     },
-        //     options: {
-        //         scales: {
-        //             y: {
-        //                 beginAtZero: true
-        //             }
-        //         }
-        //     }
-        // });
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: Object.keys(result),
+                datasets: [{
+                    label: 'COUNT',
+                    data: Object.values(result),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
     </script>
 
 </body>
