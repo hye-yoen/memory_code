@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+       box-sizing : border-box;
+    }
+    /* 요소 선택자 */
+    div{
+        width: 150px;
+        height: 150px;
+        border : 1px solid;
+        margin : 10px
+    }
+    /* id선택자 (문서내에 하나만 있어야 함!!!!) */
+    #id_01{
+        background-color: red;
+    }
+    /* class선택자 */
+    .c1{
+
+        background-color: blue;
+    }
+    /* 그룹 선택자 */
+    #id_01,.c1{
+        
+    }
+    </style>
+</head>
+<body>
+    <div class = "c1"></div>
+    <div id = "id_01"></div>
+    <div></div>
+    <div class = "c1" ></div>
+    <div>
+        <p class = "c1">HELLOWORLD</p>
+    </div>
+</body>
+</html>
